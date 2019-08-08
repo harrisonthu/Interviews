@@ -28,7 +28,7 @@ public class BinarySearch {
     }
 
 
-
+// (Elements of Programming Interview - Pg 164)
 // Added on 8/8/2019 for the algorithm to solve the entry equal to its index   
 // Question: Sorted array of distinct integers, returns an index i
 //           Such that the element at index i equals i.
