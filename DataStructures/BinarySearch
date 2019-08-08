@@ -1,0 +1,50 @@
+public class BinarySearch {
+
+    // function to find any index of the value 'x'
+    // arr[] = input array
+    // l = lower index
+    // u = upper index
+    // value = value/int that you are searching in the array
+    int BinarySearch(int arr[], int l, int u, int value) {
+        if (u>1){
+            int mid = l+(u-1)/2;
+
+            // find the value u looking for
+            if(arr[mid] == value){
+                return mid;
+            }
+            else if (arr[mid] > value){
+                return BinarySearch(arr,l,mid-1, value);
+            }
+
+            // input value is greater than mid index's value of the array
+            else{
+                return BinarySearch(arr, mid+1 ,u, value);
+            }
+        }
+
+    // not found
+    return -1;
+    }
+
+
+
+
+
+
+
+    public static void main(String[] args){
+        BinarySearch ob = new BinarySearch();
+        int arr[] = {2,3,4,10,40};
+        int n = arr.length;
+        int x = 10;
+        int result = ob.BinarySearch(arr,0,n-1,x);
+        if (result == -1)
+            System.out.println("Element not present");
+        else
+            System.out.println("Element found at index " +
+                    result);
+
+    }
+
+}
