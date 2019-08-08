@@ -29,6 +29,41 @@ public class BinarySearch {
 
 
 
+// Added on 8/8/2019 for the algorithm to solve the entry equal to its index   
+// Question: Sorted array of distinct integers, returns an index i
+//           Such that the element at index i equals i.
+//           e.g: when the input is <-2,0,2,3,6,7,9>, algorithm return 2 or 3
+
+
+    public static int searchEntryEqualToItsIndex(List<Integer> A) {
+        int left = 0;                            // leftest index of the array A
+        int right = A.size() - 1;
+        while (left < right) {
+            int mid = left + (right - left) / 2;    // instead of (left+right/2) to avoid overflow bug
+            int difference = A.get(mid) - mid;    // Comparing the index == value at the index
+
+            if (difference == mid) {  // We found value that is equal index
+                return mid;
+            }
+
+            //  In this scenario, difference > 0
+            //  _________________
+            // |____|__5___|_____|
+            // i= 0    1      2
+            //
+            //  5 in the array is larger than the index (1)
+            else if (difference > mid) {
+                right = mid - 1;
+            }
+
+            //  difference <0
+            else {
+                left = mid + 1;
+            }
+        }
+        return -1;
+    }
+
 
 
 
