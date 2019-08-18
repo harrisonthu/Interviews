@@ -1,6 +1,6 @@
 public class BinarySearch {
 
-    // function to find any index of the value 'x'
+    // function to find any index of the value 'x' 
     // arr[] = input array
     // l = lower index
     // u = upper index
