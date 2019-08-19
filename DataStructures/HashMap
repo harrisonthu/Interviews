@@ -3,7 +3,7 @@ public class HashMap
 { 
 
     // Hashmap = Key and value pair
-    // TreeMap = using hashing idea but not key and value
+    // TreeMap = using hashing idea but not key and value like Hashmap
     public static void main(String[] args)  
     { 
       
