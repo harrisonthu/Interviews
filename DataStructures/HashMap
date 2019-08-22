@@ -6,7 +6,7 @@ public class HashMap
     // TreeMap = using hashing idea but not key and value like Hashmap
     public static void main(String[] args)  
     { 
-      
+       
         HashMap<String, Integer> map = new HashMap<>(); 
           
         print(map); 
