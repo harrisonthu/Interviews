@@ -1,6 +1,6 @@
 
 public class HashMap 
-{ 
+{
 
     // Hashmap = Key and value pair
     // TreeMap = using hashing idea but not key and value like Hashmap
