@@ -15,7 +15,7 @@ public class BinarySearchTree {
         this.root = null;
     }
 
-    //Insertion
+    // ----- Insertion method ----- 
     // value = new value that I want to insert
     void Insertion(int value){
         root = InsertionHelper(root,value);
