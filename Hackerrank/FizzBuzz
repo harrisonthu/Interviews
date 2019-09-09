@@ -9,6 +9,7 @@ public class Solution {
         //Scanner sc = new Scanner(System.in);
         //int myint = sc.nextInt();
         
+        // Since we need to provide the 1-100, since it is not coming from system.in , use for loop
         for (int i =1; i<=100; i++){        
             // check if myint is divisible by 3 or 5
             if (i%15 ==0){
