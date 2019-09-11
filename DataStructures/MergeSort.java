@@ -24,7 +24,7 @@ public class MergeSort {
         // fill in all new initialized 1st subarray
         // TEST: System.out.print("l= " + l);
         for (int i=0;i<n1;i++){
-            L[i] = arr[l+i]; // TODO why arr[l+i] instead of arr [i]
+            L[i] = arr[l+i]; // TODO why arr[l+i] instead of arr [i], Left subaray bring leftest of the splited(instead of first index)
         }
         // fill in all new initialized 2nd subarray
         for (int i=0;i<n2;i++){
