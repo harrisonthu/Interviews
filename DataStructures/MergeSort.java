@@ -10,6 +10,9 @@ public class MergeSort {
     // First subarray is arr[l..m]
     // Second subarray is arr[m+1..r]
     void merge(int arr[],int l, int m, int r){
+
+        // TEST: Print out the first time when merge function run??
+        // System.out.println ("inside merge: l = "+ l +" m="+ m + " r="+r);
         // initialize size of subarray
         int n1 = m-l+1; // first subarray size
         int n2 = r-m;   // second subarray size
@@ -18,11 +21,12 @@ public class MergeSort {
         int[] L = new int [n1];
         int[] R = new int [n2];
 
-        // fill in all new initialized subarray
+        // fill in all new initialized 1st subarray
+        // TEST: System.out.print("l= " + l);
         for (int i=0;i<n1;i++){
             L[i] = arr[l+i]; // TODO why arr[l+i] instead of arr [i]
         }
-        // fill in all new initialized subarray
+        // fill in all new initialized 2nd subarray
         for (int i=0;i<n2;i++){
             R[i] = arr[m+i+1];
         }
@@ -67,7 +71,7 @@ public class MergeSort {
     // this sort() function split all original array in single pieces
     void sort (int arr[], int l, int r){
         if (l<r){
-            int mid = (l+r)/2; 
+            int mid = (l+r)/2;
             sort(arr, l, mid);
             sort(arr, mid+1,r);
             merge(arr, l, mid, r);
@@ -92,6 +96,5 @@ public class MergeSort {
         System.out.println("\nSorted array");
         printarray(myarray);
     }
-
 }
 
