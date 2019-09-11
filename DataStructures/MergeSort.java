@@ -20,7 +20,7 @@ public class MergeSort {
 
         // fill in all new initialized subarray
         for (int i=0;i<n1;i++){
-            L[i] = arr[i]; // TODO why arr[l+i] instead of arr [i]
+            L[i] = arr[l+i]; // TODO why arr[l+i] instead of arr [i]
         }
         // fill in all new initialized subarray
         for (int i=0;i<n2;i++){
