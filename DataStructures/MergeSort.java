@@ -94,7 +94,7 @@ public class MergeSort {
         MergeSort ob = new MergeSort();
         ob.sort(myarray, 0, myarray.length-1);
         System.out.println("\nSorted array");
-        printarray(myarray);
+        printarray(myarray); 
     }
 }
 
