@@ -24,7 +24,7 @@ public class BinarySearch {
         }
 
     // not found
-    return -1;
+    return -1; 
     }
 
 
