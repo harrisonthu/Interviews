@@ -13,6 +13,27 @@ public class median {
 
     }
 
+    double findmedian (int[] inputarray){
+        double result = 0.0;
+        if(inputarray.length>=1){
+            int n = inputarray.length;
+            int mid = n/2;
+            if(n%2 ==0){  // even size array
+//                if(inputarray.length>=2){  // Array size is more than 2
+//
+//                }
+
+                result = (inputarray[mid-1]+ inputarray[mid])/2.0;
+            }
+            else{   // odd size array
+                result = (inputarray[mid]);
+            }
+
+        }
+
+        return result;
+    }
+
 
     public static void main(String args[]) {
         int[] arr1 = {1, 3, 5};
