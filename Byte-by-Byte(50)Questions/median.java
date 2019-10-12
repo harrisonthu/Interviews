@@ -3,8 +3,8 @@ import java.util.Arrays;
 import java.util.List;
 
 // This question is from Page 1 from 50 Interview Questions (Byte by Byte)
-// Median of Arrays 
-// Question : Find the median of two sorted arrays. 
+// Median of Arrays 
+// Question : Find the median of two sorted arrays. 
 //
 public class median {
 
@@ -13,24 +13,25 @@ public class median {
 
     }
 
-    double findmedian (int[] inputarray){
+    public static double findmedian(int[] inputarray) {
         double result = 0.0;
-        if(inputarray.length>=1){
+        if (inputarray.length >= 1) {
             int n = inputarray.length;
-            int mid = n/2;
-            if(n%2 ==0){  // even size array
+            int mid = n / 2;
+            if (n % 2 == 0) {  // even size array
 //                if(inputarray.length>=2){  // Array size is more than 2
 //
 //                }
 
-                result = (inputarray[mid-1]+ inputarray[mid])/2.0;
-            }
-            else{   // odd size array
-                result = (inputarray[mid]);
+                //result = (inputarray[mid-1]+ inputarray[mid])/2.0;
+                return (inputarray[mid - 1] + inputarray[mid]) / 2.0;
+            } else {   // odd size array
+
+                //result = (inputarray[mid]);
+                return inputarray[mid];
             }
 
         }
-
         return result;
     }
 
@@ -65,20 +66,18 @@ public class median {
         }
         // if the two input arrays are not same size
         // add the rest of the values from larger size array
-        while(i<n){ // if arr1 size is larger than arr2
+        while (i < n) { // if arr1 size is larger than arr2
             finalsortedarray[k] = arr1[i];
             k++;
             i++;
         }
-        while(j<m){ // if arr2 size is larger than arr1
+        while (j < m) { // if arr2 size is larger than arr1
             finalsortedarray[k] = arr2[j];
             k++;
             j++;
         }
         System.out.println(Arrays.toString(finalsortedarray));
+        System.out.println(findmedian(finalsortedarray));
     }
-
-
-
 
 }
