@@ -4,7 +4,7 @@ import java.util.List;
 
 // This question is from Page 1 from 50 Interview Questions (Byte by Byte)
 // Median of Arrays 
-// Question : Find the median of two sorted arrays. 
+// Question(Q1) : Find the median of two sorted arrays. 
 // Solution:  https://www.byte-by-byte.com/median/ 
 //
 public class median {
