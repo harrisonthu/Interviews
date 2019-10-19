@@ -34,7 +34,7 @@ public class MatrixProduct {
                     MaxVal = Math.max(TempMaxVal, MaxVal);
                     int TempMinVal = Math.min(matrix[row][col] * MinCache[row - 1][col], matrix[row][col] * MaxCache[row - 1][col]);
                     MinVal = Math.min(TempMinVal, MinVal);
-                }
+                } 
                 if (col > 0) {
                     // TempMaxVal = current cell of possible Max value while looping
                     int TempMaxVal = Math.max(matrix[row][col] * MinCache[row][col - 1], matrix[row][col] * MaxCache[row][col - 1]);
