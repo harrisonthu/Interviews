@@ -1,0 +1,44 @@
+
+
+// This question is from Page 8 from 50 Interview Questions (Byte by Byte)
+// Find Duplicates 
+// Question(Q5) :   Fnd the length of the longest sequence
+//                  of consecutive numbers in the array
+// Solution:  https://www.byte-by-byte.com/consecutivearray/
+//
+
+import java.util.HashSet;
+
+public class ConsecutiveArray {
+
+    public static int ConsecutiveArray(int[] arr) {
+        HashSet<Integer> hs = new HashSet<>();
+        for (int i : arr) {
+            // Add all values from arr to Hashset so it removes duplicates
+            hs.add(i);
+        }
+
+        int max = 0;
+        for (int i : hs) {
+            if (hs.contains(i - 1)) {
+                continue;
+            } else {
+                int length = 0;
+                while (hs.contains(i++)) {
+                    length++;
+                }
+                max = Math.max(max, length);
+            }
+
+        }
+        System.out.println(hs);
+        return max;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {4, 2, 1, 6, 5, 5, 5, 5, 7};
+        System.out.println(ConsecutiveArray(arr));
+
+    }
+}
+
