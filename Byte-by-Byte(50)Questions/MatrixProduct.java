@@ -7,16 +7,19 @@
 
 public class MatrixProduct {
 
-    // Constructor
+    // Function to solve the problem
+    // Returns the maxinum number of product from the matrix
     public int MatrixProduct(int[][] matrix) {
         // Base Case:
-        //     When row/col is 0, return 0
+        //     When input arry size is 0, return 0
         if (matrix.length == 0 || matrix[0].length == 0) {
             return 0;
         }
+        // Create MinCache/MaxCache
+        // Reason because last cell(rightest bottom value is negative, in that scenario,
+        // we have to pick the smaller of the two possible values (top/left cells)
         int[][] MaxCache = new int[matrix.length][matrix[0].length];
         int[][] MinCache = new int[matrix.length][matrix[0].length];
-        // Create MinCache/MaxCache
         for (int row = 0; row < matrix.length; row++) {
             for (int col = 0; col < matrix[0].length; col++) {
                 int MinVal = Integer.MAX_VALUE;  // possible greatest Min val so far in this path
