@@ -25,7 +25,6 @@ public class MatrixProduct {
                 if (row == 0 && col == 0) {
                     MaxVal = matrix[row][col];
                     MinVal = matrix[row][col];
-                    continue;
                 }
                 // When row is greater than 1,
                 if (row > 0) {
