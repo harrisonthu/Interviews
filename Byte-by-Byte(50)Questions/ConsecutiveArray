@@ -11,6 +11,7 @@ import java.util.HashSet;
 
 public class ConsecutiveArray {
 
+    // Function to return the maxinum consecutive sequence number in array
     public static int ConsecutiveArray(int[] arr) {
         HashSet<Integer> hs = new HashSet<>();
         for (int i : arr) {
@@ -18,13 +19,14 @@ public class ConsecutiveArray {
             hs.add(i);
         }
 
-        int max = 0;
+
+        int max = 0; // return Max consecutive sequence length
         for (int i : hs) {
-            if (hs.contains(i - 1)) {
-                continue;
+            if (hs.contains(i - 1)) { // TEST: i-1 NOT index
+                continue;       // if found value less than current value in Hashset, ignore
             } else {
                 int length = 0;
-                while (hs.contains(i++)) {
+                while (hs.contains(i++)) { // Found value larger current value in Hashset,keep looking higher values
                     length++;
                 }
                 max = Math.max(max, length);
