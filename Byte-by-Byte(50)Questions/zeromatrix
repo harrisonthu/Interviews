@@ -1,0 +1,104 @@
+public class ZeroMatrix {
+
+    public static void ZeroMatrix(boolean[][] matrix) {
+
+        // Empty matrix
+        if (matrix.length == 0 || matrix[0].length == 0) {
+            return;
+        }
+
+        boolean firstrowtrue = false;
+        boolean firstcoltrue = false;
+
+        // check if the first row of the boolean matrix contains any true value
+        for (int i = 0; i < matrix.length - 1; i++) {
+            if (matrix[0][i] == true) {
+                firstrowtrue = true;
+            }
+        }
+
+        // check if the first col (leftest col) of the boolean matrix contains any true value
+        for (int i = 0; i < matrix.length - 1; i++) {
+            if (matrix[i][0] == true) {
+                firstcoltrue = true;
+            }
+        }
+
+        // Iterating from cell at (1,1)
+        // Since we have already check first row/col above
+        // start iterating from (1,1) cell to the end:
+        for (int row = 1; row < matrix.length - 1; row++) {
+            for (int col = 1; col < matrix[0].length - 1; col++) {
+                if (matrix[row][col] == true) { // checking rows to the right from cell (1,1)
+                    matrix[0][col] = true;
+                    matrix[row][0] = true;
+                }
+            }
+        }
+
+        // Iterating from (0,0) cell to the row end
+        // set the rest of the row to true (if one of the list in the row is true already
+        for (int i = 0; i < matrix.length - 1; i++) {
+            if (matrix[0][i] == true) {
+                for (int j = 1; j < matrix.length - 1; j++) {
+                    matrix[i][j] = true;
+                }
+            }
+        }
+
+        // Iterating from (0,0) cell to the col end
+        // set the rest of the col to true (if one of the list in the col is true already
+        for (int i = 0; i < matrix.length - 1; i++) {
+            if (matrix[i][0] == true) {
+                for (int j = 1; j < matrix.length - 1; j++) {
+                    matrix[i][j] = true;
+                }
+            }
+        }
+
+        // Iterating FIRST row of the matrix and set all row to true(if first cell (0,0) contains true)
+        if (firstrowtrue) {
+            for (int i = 0; i < matrix.length - 1; i++) {
+                matrix[0][i] = true;
+            }
+        }
+
+        // Iterating FIRST col of the matrix and set all col to true(if first cell (0,0) contains true)
+        if (firstcoltrue) {
+            for (int i = 0; i < matrix.length - 1; i++) {
+                matrix[i][0] = true;
+            }
+        }
+
+
+    }
+
+
+    public static void main(String[] args) {
+        boolean[][] mymatrix = {{true, false, false}, {false, false, false}, {false, false, false}};
+        System.out.println("before");
+
+        for (int i = 0; i < mymatrix.length; i++) {
+            for (int j = 0; j < mymatrix[0].length; j++) {
+                System.out.print(mymatrix[i][j] + " ");
+            }
+
+            System.out.println();
+        }
+
+
+        ZeroMatrix(mymatrix);
+        System.out.println("after");
+
+        for (int i = 0; i < mymatrix.length; i++) {
+            for (int j = 0; j < mymatrix[0].length; j++) {
+                System.out.print(mymatrix[i][j] + " ");
+            }
+
+            System.out.println();
+        }
+
+
+    }
+
+}
