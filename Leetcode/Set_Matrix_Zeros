@@ -1,0 +1,104 @@
+public class ZeroMatrix {
+
+    public static void ZeroMatrix(int[][] matrix) {
+
+        //Base Case: if Matrix length is less than 0(empty matrix), just return
+        if (matrix.length < 1 || matrix[0].length < 1) {
+            return;
+        }
+
+        boolean firstrowzero = false; // check if any on the first row is zero
+        boolean firstcolzero = false; // check if any on the first col is zero
+
+        for (int i = 0; i < matrix.length - 1; i++) {
+            if (matrix[0][i] == 0) { // checking first row
+                firstrowzero = true;
+            }
+        }
+
+        for (int i = 0; i < matrix.length - 1; i++) {
+            if (matrix[0][i] == 0) { // checking first row
+                firstrowzero = true;
+            }
+        }
+
+        // looping from first row, first col [1,1] cell to the end(length of matrix)
+        // [1,  2,  3,  4]
+        //       __________
+        // [5,  |6,  7,  8]
+        // [9,  |0,  1 , 2]
+        // [3,  |4,  5,  6]
+        //
+        for (int row = 1; row < matrix.length - 1; row++) {
+            for (int col = 1; col < matrix.length - 1; col++) {
+                if (matrix[row][col] == 0) {// current cell is zero
+                    matrix[0][col] = 0;  // set first row (in this case, starting from [1,1] to zero
+                    matrix[row][0] = 0;  // set first col (in this case, starting from [1,1] to zero
+                }
+            }
+        }
+
+        /*
+        // Iterate through first column starting from row 1, if cell is marked as 0:
+        //    mark the entire corresponding row to 0s
+        for(int i = 1; i <= matrix.length - 1; i++) {
+            if(matrix[i][0] == 0) {
+                for(int j = 1; j <= matrix[0].length - 1; j++) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+
+        // Iterate through first row starting from column 1, if cell is marked as 0:
+        //    mark entire corresponding column to 0s
+        for(int j = 1; j <= matrix[0].length - 1; j++) {
+            if(matrix[0][j] == 0) {
+                for(int i = 1; i <= matrix.length - 1; i++) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+        */
+
+
+        if (firstrowzero = true) {
+            for (int i = 0; i < matrix.length - 1; i++) {
+                matrix[0][i] = 0; // set the first row in the matrix to zero
+            }
+        }
+
+        if (firstcolzero = true) {
+            for (int i = 0; i < matrix.length - 1; i++) {
+                matrix[i][0] = 0; // set the first col in the matrix to zero
+            }
+        }
+
+    }
+
+
+    public static void main(String[] args) {
+        int[][] mymatrix = {{0, 1, 2, 0}, {3, 4, 5, 2}, {1, 3, 1, 5}};
+
+        System.out.println("Before");
+        for (int i = 0; i < mymatrix.length; i++) {
+            for (int j = 0; j < mymatrix[0].length; j++) {
+                System.out.print(mymatrix[i][j] + " ");
+            }
+
+            System.out.println();
+        }
+
+        ZeroMatrix(mymatrix);
+
+        System.out.println("After");
+        for (int i = 0; i < mymatrix.length; i++) {
+            for (int j = 0; j < mymatrix[0].length; j++) {
+                System.out.print(mymatrix[i][j] + " ");
+            }
+
+            System.out.println();
+        }
+
+    }
+
+}
