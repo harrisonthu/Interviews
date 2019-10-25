@@ -1,0 +1,65 @@
+import java.util.Arrays;
+
+public class SquareSubmatrix {
+
+    // This question is from Page 9 from 50 Interview Questions (Byte by Byte)
+//  Square Submatrix 
+// Question(Q7) :  Given a 2D array of 1s and 0s, ﬁnd the largest square subarray of all 1s   
+//          Given a 2D array of 1s and 0s, ﬁnd the largest square subarray of all 1s
+// Solution:  https://www.byte-by-byte.com/squaresubmatrix/
+//
+
+    
+    public static int SquareSubmatrix(int[][] matrix) {
+        if (matrix.length <= 0 || matrix[0].length <= 0)
+            return 0;
+        int row_len = matrix.length;
+        int col_len = matrix[0].length;
+        int max = 0;
+
+        int[][] resultmatrix = new int[row_len][col_len];
+
+        for (int row = 0; row < row_len; row++) {
+            for (int col = 0; col < col_len; col++) {
+                if (row == 0 || col == 0) {
+                    if(matrix[row][col]== 1){
+                        resultmatrix[row][col] = 1;
+                    }else{
+                        resultmatrix[row][col] = 0;
+                    }
+                }
+                else if (matrix[row][col] == 1) {
+                    resultmatrix[row][col] = Math.min(Math.min(matrix[row][col - 1],  // left cell
+                                                                matrix[row - 1][col]),// top cell
+                                                                matrix[row - 1][col - 1]) + 1; // diagonal cell
+                    System.out.println("here: "+ resultmatrix[row][col]);
+                    //max = resultmatrix[row][col];
+                }
+                if (resultmatrix[row][col] > max) {
+                    System.out.println("matrix["+row+"]"+"["+col+"]: " + resultmatrix[row][col]);
+                        max = resultmatrix[row][col];
+                }
+            }
+        }
+        return max;
+    }
+
+
+
+    public static void main(String args[]) {
+        int[][] mymatrix = {{1,1,1,0}, {1,1,1,1}, {1,1,0,0}};
+        int[][] mymatrix2 = {{1,1,1,1,0}, {1,1,1,1,1}, {1,1,1,1,1},{1,1,1,1,0}};
+        //System.out.println(Arrays.deepToString(mymatrix2));
+        for (int[] x : mymatrix2)
+        {
+            for (int y : x)
+            {
+                System.out.print(y + " ");
+            }
+            System.out.println();
+        }
+
+        System.out.println(bottomUpSquareSubmatrix(mymatrix));
+        //System.out.println(SquareSubmatrix(mymatrix2));
+
+    }
