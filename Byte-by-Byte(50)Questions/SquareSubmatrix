@@ -29,16 +29,13 @@ public class SquareSubmatrix {
                     }
                 }
                 else if (matrix[row][col] == 1) {
-                    //System.out.println("here== matrix[" + row + "]" + "[" + col + "]: " + resultmatrix[row][col]);
                     // TEST: checking top,diagonal, left of resultmatrix (not matrix)
                     resultmatrix[row][col] = Math.min(Math.min(resultmatrix[row][col - 1],  // left cell
                             resultmatrix[row - 1][col]),// top cell
                             resultmatrix[row - 1][col - 1]) + 1; // diagonal cell
-                    //System.out.println("after  == matrix[" + row + "]" + "[" + col + "]: " + resultmatrix[row][col]);
                     //max = resultmatrix[row][col];
                 }
                 if (resultmatrix[row][col] > max) {
-                    System.out.println("matrix["+row+"]"+"["+col+"]: " + resultmatrix[row][col]);
                         max = resultmatrix[row][col];
                 }
             }
@@ -51,7 +48,8 @@ public class SquareSubmatrix {
     public static void main(String args[]) {
         int[][] mymatrix = {{1,1,1,0}, {1,1,1,1}, {1,1,0,0}};
         int[][] mymatrix2 = {{1,1,1,1,0}, {1,1,1,1,1}, {1,1,1,1,1},{1,1,1,1,0}};
-        //System.out.println(Arrays.deepToString(mymatrix2));
+        
+        //System.out.println(Arrays.deepToString(mymatrix2)); // Another way to print out the array int, but not formatted for 2D array
         for (int[] x : mymatrix2)
         {
             for (int y : x)
@@ -61,7 +59,6 @@ public class SquareSubmatrix {
             System.out.println();
         }
 
-        //System.out.println(bottomUpSquareSubmatrix(mymatrix));
         System.out.println(SquareSubmatrix(mymatrix2));
 
     }
