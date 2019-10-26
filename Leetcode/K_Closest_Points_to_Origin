@@ -1,0 +1,63 @@
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
+class Solution {
+
+
+
+    public static double compute(int[] array){
+        double result;
+        if(array.length ==2){
+            result = Math.hypot((double) array[0], (double)array[1]);
+            return result;
+        }
+        return 0;
+    }
+
+
+    class PriorityQueueScore implements Comparator<Point>{
+        public int compare(double a, double b){
+            return 0;
+        }
+
+        @Override
+        public int compare(Point p1, Point p2) {
+            return Double.compare(p1.distance,p2.distance);
+        }
+    }
+
+
+    class Point{
+        int[] points = new int[];
+        public double distance;
+
+        public Point(int[] points,double distance){
+            this.points = points;
+            this.distance = distance;
+        }
+    }
+
+
+    public int[][] kClosest(int[][] points, int K) {
+        PriorityQueue<Point> mypq = new PriorityQueue<Point>(new PriorityQueueScore());
+
+        // Looping the array and return the value:
+        for(int i=0;i<points.length;i++){
+            double distance =  compute(points[0]);
+            Point cur = new Point(points[i],distance);
+            mypq.add(cur);
+        }
+        int[][] result = new int[2][K];
+        for(int i=0;i<K;i++){
+            result[i] = mypq.poll().points;
+        }
+        return result;
+    }
+
+
+    public static void main(String args[]){
+        int [] myarray = {1,3};
+        System.out.println(compute(myarray));
+    }
+
+}
