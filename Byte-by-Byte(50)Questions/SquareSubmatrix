@@ -29,10 +29,12 @@ public class SquareSubmatrix {
                     }
                 }
                 else if (matrix[row][col] == 1) {
-                    resultmatrix[row][col] = Math.min(Math.min(matrix[row][col - 1],  // left cell
-                                                                matrix[row - 1][col]),// top cell
-                                                                matrix[row - 1][col - 1]) + 1; // diagonal cell
-                    System.out.println("here: "+ resultmatrix[row][col]);
+                    //System.out.println("here== matrix[" + row + "]" + "[" + col + "]: " + resultmatrix[row][col]);
+                    // TEST: checking top,diagonal, left of resultmatrix (not matrix)
+                    resultmatrix[row][col] = Math.min(Math.min(resultmatrix[row][col - 1],  // left cell
+                            resultmatrix[row - 1][col]),// top cell
+                            resultmatrix[row - 1][col - 1]) + 1; // diagonal cell
+                    //System.out.println("after  == matrix[" + row + "]" + "[" + col + "]: " + resultmatrix[row][col]);
                     //max = resultmatrix[row][col];
                 }
                 if (resultmatrix[row][col] > max) {
