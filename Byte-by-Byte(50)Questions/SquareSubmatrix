@@ -59,7 +59,7 @@ public class SquareSubmatrix {
             System.out.println();
         }
 
-        System.out.println(bottomUpSquareSubmatrix(mymatrix));
-        //System.out.println(SquareSubmatrix(mymatrix2));
+        //System.out.println(bottomUpSquareSubmatrix(mymatrix));
+        System.out.println(SquareSubmatrix(mymatrix2));
 
     }
