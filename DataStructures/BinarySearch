@@ -6,7 +6,7 @@ public class BinarySearch {
     // u = upper index
     // value = value/int that you are searching in the array
     int BinarySearch(int arr[], int l, int u, int value) {
-        if (u>1){
+        if (u>=1){
             int mid = l+(u-1)/2;
 
             // find the value u looking for
