@@ -1,0 +1,65 @@
+import java.util.PriorityQueue;
+
+public class mergekarrays {
+
+    private static class QueueNode implements Comparable<>{
+        int array;
+        int index;
+        int value;
+
+        QueueNode(int arrays, int index, int value) {
+            this.array = arrays;
+            this.index = index;
+            this.value = value;
+        }
+
+        public int compareTo(QueueNode inputnode) {
+            if(this.value==inputnode.value) {
+                return 0;
+            }
+            else if(this.value>inputnode.value) {
+                return 1;
+            }
+            else {
+                return -1;
+            }
+        }
+    }
+
+    public static int[] mergekarrays(int[][] inputarrays) {
+        PriorityQueue<QueueNode> mypq = new PriorityQueue<>();
+        int finalresultarraysize = 0;
+
+        // Looping the int 2D arrays and check the size for final arrays
+        for (int row = 0; row < inputarrays.length; row++) {
+            finalresultarraysize += inputarrays[row].length;
+            if (inputarrays[row].length > 0) {
+                // Add the first element of the input array in each row
+                //e.g   {1, 4, 7}
+                //      {2, 5, 8}
+                //      {3, 6, 9}
+                // here, it added three elements "1,2,3"
+                mypq.add(new QueueNode(row, 0, inputarrays[row][0])); // Need to make QueueNode static to be accessed
+            }
+        }
+
+        int[] result = new int[finalresultarraysize];
+        // Looping what's inside of priority queue
+        for (int i = 0; !mypq.isEmpty(); i++) {
+            QueueNode curr = mypq.poll(); // poll = retrieve value and remove value from the Priority Queue
+            result[i] = curr.value;
+            int newindex = curr.index + 1;
+
+            // REVIEW
+            if (newindex < inputarrays[curr.array].length){
+                mypq.add(new QueueNode(curr.array, newindex, inputarrays[curr.array][newindex]));
+            }
+        }
+
+
+        return result;
+    }
+    
+
+
+}
