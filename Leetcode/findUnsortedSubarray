@@ -1,0 +1,34 @@
+public class findUnsortedSubarray {
+
+
+    // eg. Question: https://leetcode.com/problems/shortest-unsorted-continuous-subarray/
+    // Input: [2, 6, 4, 8, 10, 9, 15]
+    // Output: 5
+    // Explanation: You need to sort [6, 4, 8, 10, 9] in ascending order to make the whole array sorted in ascending order.
+    // Solution:  https://leetcode.com/problems/shortest-unsorted-continuous-subarray/discuss/103057/Java-O(n)-Time-O(1)-Space
+    public int findUnsortedSubarray(int[] nums) {
+        int n = nums.length;
+        int begin_index = -1;
+        int end_index = -2;
+        int max = nums[0]; // set the first value of the input array to max
+        int min = nums[n - 1]; // set the last value of the input array to mins
+
+
+        // Looping the array begin_index and end_index to keep track of minimum subarray A[beg...end]
+        // which must be sorted for the entire array A to be sorted.
+        // If end_index < beg_index < 0 at the end of the for loop, then the array is already fully sorted.
+        for (int i = 1; i < nums.length; i++) {
+            max = Math.max(max, nums[i]);
+            min = Math.min(min, nums[n - 1 - i]);
+            if (nums[i] < max) {
+                end_index = i;
+            }
+            if (nums[n - 1 - i] > min) {
+                begin_index = i;
+            }
+        }
+        return end_index - begin_index + 1;
+    }
+
+
+}
