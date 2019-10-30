@@ -1,0 +1,56 @@
+
+// This question is from Page 10 from 50 Interview Questions (Byte by Byte)
+// Search element x in the given an n x m array where all rows and columns are in sorted order
+// Question(Q9) :  
+// Write a function to determine whether the array contains an element x. 
+// Solution:  https://www.youtube.com/watch?reload=9&time_continue=2&v=bK7BCWICvpQ
+//
+
+public class MatrixSearch {
+
+
+    // int[][] array = input array
+    // int value = element that we are searching in this 2D matrix
+    // RETURN: boolean (True, False)
+    public static boolean MatrixSearch(int[][] array, int value) {
+        // Base Case: Empty array
+        if (array.length == 0 || array[0].length == 0) {
+            return false;
+        }
+
+        int row = 0; // Starting row cell
+        int col = array[0].length - 1;
+
+        while (row <= array.length - 1 && col >= 0) {
+            if (array[row][col] == value) {
+                return true;
+            }
+            if (array[row][col] < value) {
+                row++;
+            } else {
+                col--;
+            }
+        }
+        return false;
+
+    }
+
+
+    public static void main(String args[]) {
+        int[][] myarray = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}, {9, 10, 11}};
+        System.out.println("myarray.length: " + myarray.length); // print out 4
+        System.out.println("myarray[0].length: " + myarray[0].length); // print out 3
+        System.out.println(MatrixSearch(myarray, 16));
+
+
+//        for(int i = 0; i<myarray.length;i++){
+//            for (int j=0;j<myarray[0].length;j++){
+//                System.out.println("j: "+ j);
+//            }
+//            System.out.println("i: "+i);
+//        }
+
+    }
+
+
+}
