@@ -6,10 +6,14 @@
 // Solution:  https://www.youtube.com/watch?reload=9&time_continue=2&v=bK7BCWICvpQ
 //
 
+
+//  [0, 1, 2]
+//  [3, 4, 5]  
+//  [6, 7, 8]
+//  [9, 10, 11]
+//  
 public class MatrixSearch {
 
-
-    // int[][] array = input array
     // int value = element that we are searching in this 2D matrix
     // RETURN: boolean (True, False)
     public static boolean MatrixSearch(int[][] array, int value) {
