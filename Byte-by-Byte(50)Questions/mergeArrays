@@ -13,12 +13,18 @@
 // Solution:  https://www.byte-by-byte.com/mergearrays/ 
 //
 
-public class mergeArrays ([] int a, [] int b, int alength, int blength){
+public class mergeArrays (){
+
+  public class mergeArrays ([] int a, [] int b, int alength, int blength){
+      // base case
+      if(alength+blength > alength){
+        throws new Exception();
 
 
 
 
+
+  }
 
 
 }
-
