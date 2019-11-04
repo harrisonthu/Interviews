@@ -23,37 +23,55 @@ public class mergearrays {
     //      B = {2,4,6}
     //      mergeArrays(A, B)
     //      A = {1,2,3,4,5,6}
-    public void mergearrays(int[] A, int[] B, int a_size, int b_size) throws Exception {
-        int A_n = A.length - 1;
-        int B_m = B.length - 1;
-        int a_index = a_size;  // Declare here so it will not retrieve from the parameter
-        int b_index = b_size;  // Declare here so it will not retrieve from the parameter
+    public static void mergearrays(int[] A, int[] B, int a_size, int b_size) throws Exception {
+        try {
 
-        int mergeindex = A.length - 1;
-        // Base case:
-        if (a_index + b_index > A.length - 1) {
-            throw new Exception();
-        }
+            int A_n = A.length - 1;
+            int B_m = B.length - 1;
+            int a_index = a_size;  // Declare here so it will not retrieve from the parameter
+            int b_index = b_size;  // Declare here so it will not retrieve from the parameter
 
-        while (a_size >= 0 && b_index >= 0) {
-            if (A[a_size] > B[b_index]) {
-                A[mergeindex] = A[a_size];
-                a_size--;
-            } else {
-                A[mergeindex] = A[b_index];
+            int mergeindex = A.length - 1;
+            // Base case:
+            if (a_index + b_index > A.length - 1) {
+                throw new Exception();
+            }
 
+            while (a_size >= 0 && b_index >= 0) {
+                if (A[a_size] > B[b_index]) {
+                    A[mergeindex] = A[a_size];
+                    a_size--;
+                } else {
+                    A[mergeindex] = A[b_index];
+
+                    b_index--;
+                }
+                mergeindex--;
+            }
+            // If there are some values left in B array
+            // e.g   a = [3,,5,7,0,0,0]
+            //       b = [1,2,4,6]
+            while (b_index >= 0) {
+                A[mergeindex] = B[b_index];
+                mergeindex--;
                 b_index--;
             }
-            mergeindex--;
-        }
-        // If there are some values left in B array
-        // e.g   a = [3,,5,7,0,0,0]
-        //       b = [1,2,4,6]
-        while (b_index >= 0) {
-            A[mergeindex] = B[b_index];
-            mergeindex--;
-            b_index--;
+
+        } catch (Exception e) {
+            return;
+        } finally {
+            return;
         }
     }
-}
 
+    public static void main(String args[]) throws Exception {
+        int[] A = {3, 5, 7, 0, 0, 0};
+        int[] B = {1, 2, 4, 6};
+        System.out.println("int A = " + Arrays.toString(A));
+        mergearrays(A, B, 2, B.length - 1);
+        System.out.println("after int A = " + Arrays.toString(A));
+
+
+    }
+
+}
