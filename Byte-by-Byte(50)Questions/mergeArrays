@@ -42,7 +42,7 @@ public class mergearrays {
                     A[mergeindex] = A[a_size];
                     a_size--;
                 } else {
-                    A[mergeindex] = A[b_index];
+                    A[mergeindex] = B[b_index];
 
                     b_index--;
                 }
