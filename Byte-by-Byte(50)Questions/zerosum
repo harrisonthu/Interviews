@@ -2,8 +2,15 @@
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class zerosum {
 
+// This question is from Page 11 from 50 Interview Questions (Byte by Byte)
+// Find Zero Sum Subarray 
+// Question(Q11) :  Given an array 
+// write a functiontoﬁndanysubarraythatsumstozero, if one exists. 
+// Solution:  https://www.byte-by-byte.com/zerosum/
+//
+
+public class zerosum {
 
     public static int[] zerosum(int[] array) {
         //Base case
@@ -16,7 +23,7 @@ public class zerosum {
 
         int totalsum = 0;
         for (int i = 0; i <= array.length; i++) {
-            Integer currentsum = myhm.get(totalsum);
+            Integer currentsum = myhm.get(totalsum); // Set the first key value =0 in hashmap
             if (currentsum == null && i == array.length) {
                 return null;
             } else if (currentsum == null) {
