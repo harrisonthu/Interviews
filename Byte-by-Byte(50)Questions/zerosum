@@ -12,6 +12,8 @@ import java.util.HashMap;
 
 public class zerosum {
 
+
+
     public static int[] zerosum(int[] array) {
         //Base case
         if (array.length <= 0) {
@@ -20,19 +22,18 @@ public class zerosum {
 
         // Hashmap <current_sum , index>
         HashMap<Integer, Integer> myhm = new HashMap<Integer, Integer>();
-
         int totalsum = 0;
         for (int i = 0; i <= array.length; i++) {
             Integer currentsum = myhm.get(totalsum); // Set the first key value =0 in hashmap
-            if (currentsum == null && i == array.length) {
+            if (currentsum == null && i == array.length) { // checking if the last element is not out of bound
                 return null;
             } else if (currentsum == null) {
                 myhm.put(totalsum, i);
                 totalsum += array[i];
             } else {
-                return Arrays.copyOfRange(array, totalsum, i);
-            }
 
+                return Arrays.copyOfRange(array, totalsum, i);  // Arrays.copyOfRange (array, index_inclusive, index_exclusive)
+            }
         }
         return null;
     }
