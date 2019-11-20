@@ -1,3 +1,5 @@
+import com.sun.xml.internal.bind.v2.runtime.output.StAXExStreamWriterOutput;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,12 +10,18 @@ import java.util.List;
 
 public class Permutations {
 
+
     public static List<List<Integer>> Permutations(int[] inputarray) {
         List<List<Integer>> result = new ArrayList<>();
         backtrack(result, new ArrayList<>(), inputarray);
         return result;
     }
 
+    //   _____________________(list)_________________________
+    //  |    ___(templist)____      ___(templist)_____       |
+    //  |   |  1  |  2  |  3  |    |  1  |  3  |  2  |       |
+    //  |   |_____|_____|_____|    |_____|_____|_____| ......|
+    //  |____________________________________________________|
     //
     // templist = new temp inner array
     static void backtrack(List<List<Integer>> list, List<Integer> templist, int[] inputarray) {
@@ -30,7 +38,6 @@ public class Permutations {
                     backtrack(list, templist, inputarray);
                     templist.remove(templist.size() - 1);
                 }
-
             }
         }
     }
@@ -38,7 +45,6 @@ public class Permutations {
     public static void main(String args[]) {
         int[] inputarray = {1, 2, 3};
         System.out.println(Permutations(inputarray));
-
     }
 
 
