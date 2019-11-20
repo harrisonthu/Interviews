@@ -1,0 +1,45 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
+
+// Question: https://leetcode.com/problems/permutations/
+// Solution: https://leetcode.com/problems/permutations/discuss/18239/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partioning)
+
+public class Permutations {
+
+    public static List<List<Integer>> Permutations(int[] inputarray) {
+        List<List<Integer>> result = new ArrayList<>();
+        backtrack(result, new ArrayList<>(), inputarray);
+        return result;
+    }
+
+    //
+    // templist = new temp inner array
+    static void backtrack(List<List<Integer>> list, List<Integer> templist, int[] inputarray) {
+        // One permutation set is done since templist is full
+        if (templist.size() == inputarray.length) {
+            System.out.println(templist);
+            return;
+        } else {
+            for (int i = 0; i < inputarray.length; i++) {
+                if (templist.contains(inputarray[i])) { // current element is already used
+                    continue;
+                } else {
+                    templist.add(inputarray[i]);
+                    backtrack(list, templist, inputarray);
+                    templist.remove(templist.size() - 1);
+                }
+
+            }
+        }
+    }
+
+    public static void main(String args[]) {
+        int[] inputarray = {1, 2, 3};
+        System.out.println(Permutations(inputarray));
+
+    }
+
+
+}
