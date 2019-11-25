@@ -4,8 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+// This question is from Page 8 from 50 Interview Questions (Byte by Byte)
+// Find Duplicates 
+// Question(Q4) :  Given an array of integers where each value 1 <=x<=len(array)
+// write a function that ﬁnds all the duplicates in the array
 // Question: https://leetcode.com/problems/permutations/
 // Solution: https://leetcode.com/problems/permutations/discuss/18239/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partioning)
+// Solution:  https://www.byte-by-byte.com/findduplicates/?utm_source=optin_carrot&utm_medium=pdf&utm_campaign=50questions
+
 
 public class Permutations {
 
