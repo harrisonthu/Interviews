@@ -1,1 +1,53 @@
-// Anagram
+// This question is from Page 14 from 50 Interview Questions (Byte by Byte)
+// Anagram 
+// Question(Q14) :   Given two strings, write a function to determine whether they are anagrams.  
+// Solution:         https://www.byte-by-byte.com/anagrams/
+//
+
+public class Anagram {
+
+
+    public static boolean Anagram(String s1, String s2) {
+        if (s1.length() != s2.length()) {
+            return false;
+        }
+        //lower both input to make it easier
+        s1 = s1.toLowerCase();
+        s2 = s2.toLowerCase();
+
+        // Create a int array containing all possible characters in ASCII table (only 128 for unique character
+        // But created 256 size for non-alphabet character(such as NUL, space etc..)
+        int[] letters = new int[1 << 8]; // bit shifting to left to 8 bit==> 1 0000 0000 ==> value = 256
+
+        for (char c : s1.toCharArray()) {
+            System.out.println("before adding " +letters[c]);
+            letters[c]++;
+        }
+
+        for(int a: letters){
+            System.out.println(a);
+        }
+
+
+        for (char c : s2.toCharArray()) {
+            letters[c]--;
+        }
+        int mrcounter = 0;
+        for (int i : letters) {
+            mrcounter ++;
+            if (i != 0) {
+                return false;
+            }
+        }
+        System.out.println("mrcouter"+ mrcounter);
+        return true;
+    }
+
+
+    public static void main(String args[]) {
+        //System.out.println("new int[1<<8]"+ int(1<<8));
+        System.out.println(Anagram("ABBC", "CBBA"));
+
+    }
+
+}
