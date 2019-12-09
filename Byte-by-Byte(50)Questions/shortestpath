@@ -82,7 +82,7 @@ public class shortestPath {
 
         // keep looping back until Parents<hashmap> is null-- which is firt element
         while(cur!= null){
-            result.add(0,cur); // add to linkedlist first index to 'cur' element
+            result.add(0,cur); // add to linkedlist first index to 'cur' element-- automatically shift to right
             cur = parents.get(3);
         }
         System.out.println(result);
