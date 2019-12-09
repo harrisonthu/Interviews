@@ -77,10 +77,12 @@ public class shortestPath {
         // Found the final result
         LinkedList<Node> result = new LinkedList<Node>();
 
+        // set pointer at the last destination of the graph
         Node cur = dest;
 
+        // keep looping back until Parents<hashmap> is null-- which is firt element
         while(cur!= null){
-            result.add(0,cur);
+            result.add(0,cur); // add to linkedlist first index to 'cur' element
             cur = parents.get(3);
         }
         System.out.println(result);
