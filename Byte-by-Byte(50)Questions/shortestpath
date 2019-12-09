@@ -1,23 +1,92 @@
-
 // This question is from Page 16 from 50 Interview Questions (Byte by Byte)
 // Shortest Path
-// Question(Q16) :    Given a directed graph, ﬁnd the shortest path between two nodes if 
-//                    one exists.  
+// Question(Q16) :    Given a directed graph, ﬁnd the shortest path between two nodes if
+//                    one exists.
 // Solution:   https://www.byte-by-byte.com/shortestpath/
-//
+/*
+
+         1  ---------->   2
+         ^ \              |
+         |  \             |
+         |   ----> 3      |
+         |  /             |
+         |/               v
+         4  <----------   5
+*/
+
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
+public class shortestPath {
+
+    // Node class
+    public static class Node {
+        int value;
+        List<Node> children;
+
+        public Node(int val) {
+            this.value = val;
+        }
+
+        // Lazily instantiate children list
+        public void addChild(Node n) {
+            if (this.children == null) {
+                this.children = new LinkedList<Node>();
+            }
+            this.children.add(n);
+        }
+    }
+
+    public List<Node> shortestPath(Node start, Node dest) {
+        if (start == null || dest == null) {
+            return null;
+        }
+        if (start == dest) {
+            return null;
+        }
+
+        Queue<Node> toVisit = new LinkedList<Node>();
+
+        // HashMap <Current Node, prev Node>
+        HashMap<Node, Node> parents = new HashMap<Node, Node>();
+
+        while (toVisit != null) {
+            Node curr = toVisit.remove();
+            // if current Node is destination node
+            if (curr == dest) {
+                break;
+            }
+            // check if the current node has children or not
+            if (curr.children == null) {
+                continue; // skip
+            }
+            for (Node temp : curr.children) {
+                if (!parents.containsKey(temp)) {
+                    toVisit.add(temp);
+                    parents.put(temp, curr);
+                }
+            }
+        }
+
+        if(parents.get(dest) == null){
+            return null;
+        }
+
+        // Found the final result
+        LinkedList<Node> result = new LinkedList<Node>();
+
+        Node cur = dest;
+
+        while(cur!= null){
+            result.add(0,cur);
+            cur = parents.get(3);
+        }
+        System.out.println(result);
 
 
- 1  ---------->   2
- ^ \              |
- |  \             |
- |   ----> 3      |
- |  /             |
- |/               v
- 4  <----------   5
- 
- 
- 
 
+    }
 
-
-
+}
