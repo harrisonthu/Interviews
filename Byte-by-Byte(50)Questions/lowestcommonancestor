@@ -2,3 +2,76 @@
 // Shortest Path
 // Question(Q18) :    Given two nodes in a binary tree, write a function to ﬁnd the lowest common ancestor.
 // Solution:          https://www.byte-by-byte.com/lowestcommonancestor/ 
+/*
+Tushar solution:       https://www.youtube.com/watch?v=13m9ZCB8gjw
+
+                          3
+                        /   \
+                       6     8
+                      / \      \
+                     2   11     13
+                        /  \    /
+                       9    5  7
+
+*/
+
+
+
+
+
+import java.util.List;
+
+class Node {
+    int value;
+    Node left;
+    Node right;
+
+    public Node(int val) {
+        this.value = val;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+public class LowestCommonAncestor {
+
+    public static Node LowestCommonAncestor(Node root, Node a1, Node a2) {
+        if (root == null) {
+            return null;
+        }
+        if (root == a1 || root == a2) {
+            return root;
+        }
+        Node left = LowestCommonAncestor(root.left, a1, a2);
+        Node right = LowestCommonAncestor(root.right, a1, a2);
+
+
+
+        // Finding (a1,a2) = (9,5) ==> 11
+        //          11
+        //         /  \
+        //        9    5
+        if(left != null && right != null){
+            return root;
+        }
+
+
+
+        // see above pic (a1,a2) = (8,7) ==> 8
+        //          11
+        //     null/  \null
+        //        9    5
+        if(left == null && right == null){
+            return null;
+        }
+        if(left == null) {
+            return right;
+        }
+        if (right == null){
+            return left;
+        }
+        return null;
+
+    }
+
+}
