@@ -6,40 +6,33 @@
 // Solution:  https://www.byte-by-byte.com/reversestack/
 //
 
-import java.util.HashSet;
+import java.util.Stack;
 
-public class ConsecutiveArray {
+public class reversestack {
 
-    // Function to return the maxinum consecutive sequence number in array
-    public static int ConsecutiveArray(int[] arr) {
-        HashSet<Integer> hs = new HashSet<>();
-        for (int i : arr) {
-            // Add all values from arr to Hashset so it removes duplicates
-            hs.add(i);
+
+    public Stack<Integer> reverse(Stack<Integer> stack) {
+        if (stack.isEmpty()) {
+            return stack;
         }
+        int temporary = stack.pop();
+        reverse(stack);
+        insertatBottom(stack, temporary);
+        return stack;
 
 
-        int max = 0; // return Max consecutive sequence length
-        for (int i : hs) {
-            if (hs.contains(i - 1)) { // TEST: i-1 NOT index
-                continue;       // if found value less than current value in Hashset, ignore
-            } else {
-                int length = 0;
-                while (hs.contains(i++)) { // Found value larger current value in Hashset,keep looking higher values
-                    length++;
-                }
-                max = Math.max(max, length);
-            }
-
-        }
-        System.out.println(hs);
-        return max;
     }
 
-    public static void main3(String[] args) {
-        int[] arr = {4, 2, 1, 6, 5, 5, 5, 5, 7};
-        System.out.println(ConsecutiveArray(arr));
+    public void insertatBottom(Stack<Integer> stack, int x) {
+        if (stack.isEmpty()) {
+            stack.push(x);
+            return;
+        }
+        int temp = stack.pop();
+        insertatBottom(stack, x);
+        stack.push(temp);
+        return;
 
     }
+
 }
-
