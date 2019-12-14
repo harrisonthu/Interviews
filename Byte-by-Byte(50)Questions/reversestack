@@ -1,0 +1,33 @@
+import java.util.Stack;
+
+public class reversestack {
+
+
+    public Stack<Integer> reverse(Stack<Integer> stack) {
+        if (stack.isEmpty()) {
+            return stack;
+        }
+        int temporary = stack.pop();
+        reverse(stack);
+        insertatBottom(stack, temporary);
+        return stack;
+
+
+    }
+
+
+    public void insertatBottom(Stack<Integer> stack, int x) {
+        if (stack.isEmpty()) {
+            stack.push(x);
+            return;
+        }
+        int temp = stack.pop();
+        insertatBottom(stack, x);
+        stack.push(temp);
+        return;
+
+
+    }
+
+
+}
