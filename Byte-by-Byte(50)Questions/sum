@@ -1,1 +1,15 @@
 
+public class Sum {
+
+
+    public static int Sum(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        int xor_result = a ^ b;
+        int carryover = (a & b) << 1; // AND two binary values (shifting left) will give u the carry over
+        return Sum(xor_result, carryover);
+
+    }
+
+}
