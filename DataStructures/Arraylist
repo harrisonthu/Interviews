@@ -1,0 +1,31 @@
+  List<Integer> v0 = new ArrayList<>();
+        List<Integer> v1;                           // v1 == null
+
+        // 2. cast an array to a vector
+        Integer[] a = {0, 1, 2, 3, 4};
+        v1 = new ArrayList<>(Arrays.asList(a));
+
+        // 3. make a copy
+        List<Integer> v2 = v1;                      // another reference to v1
+        List<Integer> v3 = new ArrayList<>(v1);     // ** make an actual copy of v1 **
+
+        // 5. iterate the vector
+        for (int i = 0; i < v1.size(); ++i) {
+            System.out.print(" " + v1.get(i));
+        }
+        System.out.println();  // Output: (Version 1)The contents of v1 are: 0 1 2 3 4
+
+        for (int item : v1) {
+            System.out.print(" " + item);
+        }
+        System.out.println();  // Output: [Version 2]The contents of v1 are: 0 1 2 3 4
+
+        // 6. modify element
+        v2.set(3, 11);       // modify v2 will actually modify v1
+
+        // Printing all result
+        System.out.println("Printing v1: " + v1);    // The contents of v1 are: 0 1 2 11 4
+        System.out.println("Printing v2: " + v2);    // The contents of v2 are: 0 1 2 11 4
+        
+        System.out.println("Printing v3: " + v3);    // The contents of v3 are: 0 1 2 3 4
+        // v3 is a actual copy of v1, not referencing like v2, so v3 won't affect any changes from v1 
