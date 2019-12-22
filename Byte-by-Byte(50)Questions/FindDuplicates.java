@@ -26,7 +26,7 @@ public class FindDuplicates {
                 dupeslist.add(arr[i]);
                 continue;
             }
-            // Not included in dupeslist, so add it to dupeslist
+            // Not included in dupeslist, so add it to hashset
             else {
                 myhs.add(arr[i]);
             }
