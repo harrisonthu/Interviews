@@ -1,15 +1,18 @@
 class MyLinkedList {
 
-    /** Initialize your data structure here. */
+    /**  Instance variables for LinkedList */
     int length;
     Node head;
+    
+    // Node class
     class Node {
         int val;
         Node next;
         Node(int x) {
             this.val = x;
         }    
-    }
+    } // End of Node class
+    
     
     public MyLinkedList(){
         this.length = 0;
