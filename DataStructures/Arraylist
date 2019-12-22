@@ -4,8 +4,8 @@
         List<Integer> v1;                           // v1 == null
 
         // 2. cast an array to a vector
-        Integer[] a = {0, 1, 2, 3, 4};
-        v1 = new ArrayList<>(Arrays.asList(a));
+        Integer[] a = {0, 1, 2, 3, 4};              // 'a'  would print out like "[Ljava.lang.Integer;@15db9742"
+        v1 = new ArrayList<>(Arrays.asList(a));     // 'v1' would print out like "[0, 1, 2, 3, 4]"
 
         // 3. make a copy
         List<Integer> v2 = v1;                      // another reference to v1
