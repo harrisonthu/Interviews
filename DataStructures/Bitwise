@@ -1,22 +1,21 @@
 
 
-
-
-
-'AND' operation will give us the 'carry'  (mostly shift to left)
-'XOR' operation will give us the 'sum' 
+'OR' operation will give union
+'AND' operation will give us the 'carry' (mostly shift to left) (Intersection of two values)
+'XOR' operation will give us the 'sum' (not sure). Need more practice
+'XOR' operation will tell (binary) digita's difference
 The 'carry' and 'sum' together will give us our result.
 
 e.g
 
 7 + 5 =
 
-0 0 1 1 1   <----  7 
-0 0 1 0 1   <----  5
+0 0 1 1 1   <----  7 (a)
+0 0 1 0 1   <----  5 (b)
 ----------
-0 0 0 1 0 -----> remain = a xor b
-0 1 0 1 0 -----> carry = (a and b) << 1
----------- -----> another addition
+0 0 0 1 0    -----> remain = a xor b
+0 1 0 1 0    -----> carry = (a and b) << 1
+----------   -----> another addition
 0 1 0 0 0
 0 0 1 0 0
 ----------
