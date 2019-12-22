@@ -44,7 +44,7 @@ public class BinarySearch {
         int right = A.size() - 1;
         while (left < right) {
             int mid = left + (right - left) / 2;    // instead of (left+right/2) to avoid overflow bug
-            int difference = A.get(mid) - mid;    // Comparing the index == value at the index
+            int difference = A.get(mid) - mid;    // Comparing the index == value at the index. Notes: A.get instead of a[mid] since A is array not arraylist. See more at "Array" under DataStructures from me.
 
             if (difference == mid) {  // We found value that is equal index
                 return mid;
