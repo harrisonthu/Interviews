@@ -33,6 +33,10 @@ public class BinarySearch {
 // Question: Sorted array of distinct integers, returns an index i
 //           Such that the element at index i equals i.
 //           e.g: when the input is <-2,0,2,3,6,7,9>, algorithm return 2 or 3
+//
+//             [-2, 0 ,2, 3, 6, 7, 9] 
+//     index =   0  1  2  3  4  5  6
+//
 
 
     public static int searchEntryEqualToItsIndex(List<Integer> A) {
