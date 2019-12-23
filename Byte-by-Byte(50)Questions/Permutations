@@ -7,6 +7,14 @@ import java.util.List;
 // This question is from Page 12 from 50 Interview Questions (Byte by Byte)
 // Permutations 
 // Question(Q12) :  Write a function that returns all permutations of a given list. 
+// E.g
+            permutations({1, 2, 3})  
+            [1, 2, 3]  
+            [1, 3, 2]  
+            [2, 1, 3]  
+            [2, 3, 1]  
+            [3, 1, 2]  
+            [3, 2, 1] 
 
 // Question: https://leetcode.com/problems/permutations/
 // Solution: https://leetcode.com/problems/permutations/discuss/18239/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partioning)
@@ -15,13 +23,12 @@ import java.util.List;
 
 public class Permutations {
 
-
-    public static List<List<Integer>> Permutations(int[] inputarray) {
+    public static List<List<Integer>> Permutations (int[] inputarray) {
         List<List<Integer>> result = new ArrayList<>();
         backtrack(result, new ArrayList<>(), inputarray);
         return result;
     }
-
+    
     //   _____________________(list)_________________________
     //  |    ___(templist)____      ___(templist)_____       |
     //  |   |  1  |  2  |  3  |    |  1  |  3  |  2  |       |
@@ -29,10 +36,11 @@ public class Permutations {
     //  |____________________________________________________|
     //
     // templist = new temp inner array
+    
     static void backtrack(List<List<Integer>> list, List<Integer> templist, int[] inputarray) {
         // One permutation set is done since templist is full
         if (templist.size() == inputarray.length) {
-            System.out.println(templist);
+            //System.out.println(templist);
             return;
         } else {
             for (int i = 0; i < inputarray.length; i++) {
@@ -51,6 +59,5 @@ public class Permutations {
         int[] inputarray = {1, 2, 3};
         System.out.println(Permutations(inputarray));
     }
-
 
 }
