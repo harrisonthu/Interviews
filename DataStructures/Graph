@@ -1,11 +1,37 @@
 
+Undirected graph ==> use "unordered pairs(use curly brackets)"==> (e.g. {v1,v2} )
+Directed graph ==> use "ordered pair(use brackets)"==> (e.g. (v1,v2) )
 
+
+Vertices ==> represent with "Nodes"
+Edge     ==> link/connection between Vertices/Nodes in graph
+
+Formula:
+(Directed graph)
+0 <= E <= n(n-1)   ==> meaning max num of edge in directed graph is within max number of nodes in graph(assume no self loop)
+
+e.g 
+if 0<= |E| <= n(n-1) 
+number of vertices = 10, max number of edges = 90 (assume no self loop here)
+
+(Undirected graph)
+0 <= E <= (n(n-1))/2
+See more: https://youtu.be/AfYqN3fGapc?t=402
+
+Graph is dense  ==> too many edges
+Graph is sparse ==> too few edges
+
+Simple Path ==> path in which no vertices (and thus no edges) are repeated
+
+Strongly Connected Graph  ==>  If there is a path from any Vertex to any other vertex
+
+Acyclic Graph  ==> a graph with no cycle
+DAG (Directed acyclic graph)  ==> Directed graph with no cycle
 
 DFS vs BFS (see more on Youtube: DFS vs BFS (4-differences EASY EXPLANATION))
 
 DFS--> Use "Stack" --> able to Backtrack
 DFS --> Use 1 child pointer(connecting only 1 from each node)
-
 
 BFS--> Use "Queue" ==> No Backtracking 
 BFS --> Use 2 or more child pointers(connecting more than 1 to k childs from each node)
