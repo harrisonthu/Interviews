@@ -30,9 +30,14 @@ DAG (Directed acyclic graph)  ==> Directed graph with no cycle
 
 DFS vs BFS (see more on Youtube: DFS vs BFS (4-differences EASY EXPLANATION))
 
-DFS--> Use "Stack" --> able to Backtrack
+DFS--> Use "Stack"
 DFS --> Use 1 child pointer(connecting only 1 from each node)
+DFS ==> Preorder, In-order Post-Order
+   Preorder   ==> Root, left, right
+   In-order   ==> Left, Root, right
+   Post-order ==> Left, right, Root
 
-BFS--> Use "Queue" ==> No Backtracking 
+
+BFS--> Use "Queue"
 BFS --> Use 2 or more child pointers(connecting more than 1 to k childs from each node)
 
