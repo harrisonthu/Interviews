@@ -1,0 +1,56 @@
+
+URL for the problem:
+https://leetcode.com/problems/roman-to-integer/
+Solution: https://leetcode.com/problems/roman-to-integer/discuss/6746/Easy-to-understand-Java-solution-beats-98-Well-explained-with-comments.
+
+Given:
+
+Symbol     |    Value
+------------------------
+  I        |     1
+  V        |     5
+  X        |    10
+  L        |    50
+  C        |   100
+  D        |   500
+  M        |  1000
+------------------------
+
+class Solution {
+    public int romanToInt(String s) {
+        
+        // Store all symbol/values for roman
+        HashMap<Character, Integer> myhm = new HashMap<>();
+        myhm.put('I', 1);
+        myhm.put('V', 5);
+        myhm.put('X', 10);
+        myhm.put('L', 50);
+        myhm.put('C', 100);
+        myhm.put('D', 500);
+        myhm.put('M', 1000);
+        int result = myhm.get(s.charAt(0));
+        
+        // start from the index 1 to end of string
+        for(int i =1; i<s.length(); i++){
+            int curr = myhm.get(s.charAt(i));
+            int prev = myhm.get(s.charAt(i-1));
+            // In this scenario
+            // 'IV' ==> 'V'-'I'= 4 (since need to remove the value from 'I' from 'V')
+            // 'IX' ==> 'X'-'I'= 9 (since need to remove the value from 'I' from 'X')
+            if(prev < curr){
+                result -= prev;
+                result += curr-prev;
+            }
+            // In this scenario
+            // 'XI' ==> 'X'+'I'= 11
+            else{
+                result += curr;
+            }
+            
+        }
+        return result;
+        
+    }
+}
+
+
