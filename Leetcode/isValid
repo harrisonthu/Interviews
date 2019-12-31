@@ -1,0 +1,38 @@
+
+
+URL for the problem:
+https://leetcode.com/problems/valid-parentheses/submissions/
+Solution: https://leetcode.com/problems/valid-parentheses/discuss/391842/Easy-to-understand-Java-solution
+
+
+class Solution {
+    public boolean isValid(String s) {
+        // mod of len of array is not divided by 2 (e.g odd number)
+        if(s.length()%2 != 0){
+            return false;
+        }
+        
+        Stack<Character> mystack = new Stack<Character>();
+        char[] input = s.toCharArray();
+        for(Character c: input){
+            // See opening brackets, such as '(' '[' '{'
+            if(c == '(' || c== '[' || c == '{'){
+                mystack.push(c);
+            
+                // See closing brackets (categorize which type of bracket)
+            }else if(c == ')' && !mystack.isEmpty() && mystack.peek() == '('){
+                mystack.pop();
+            }else if(c == ']' && !mystack.isEmpty() && mystack.peek() == '['){
+                mystack.pop();
+            }else if(c == '}' && !mystack.isEmpty() && mystack.peek() == '{'){
+                mystack.pop();
+        }
+    }
+        // Items still remaining in the stack
+        // e.g Input = "(]"
+        if(!mystack.isEmpty()) {
+            return false;
+        }
+        return true;
+    }
+}
