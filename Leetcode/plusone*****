@@ -1,0 +1,26 @@
+
+
+URL for the problem:
+https://leetcode.com/problems/plus-one/
+Solution: https://leetcode.com/problems/plus-one/discuss/24082/My-Simple-Java-Solution
+
+
+public int[] plusOne(int[] digits) {
+        
+        int n = digits.length;
+        
+        // loop from right to left
+        for(int i=n-1; i>=0; i--){
+            if((digits[i]) <9){
+                digits[i]++;
+                return digits;
+            }
+            digits[i] = 0;
+        }
+        // for the input: 99999
+        // it would be   100000
+        int[] newnumber = new int[n+1];
+        newnumber[0] = 1;
+        // basically, return a new value with 0 since when you create a new int array, it will set 0
+        return newnumber;
+    }
