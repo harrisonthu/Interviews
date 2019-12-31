@@ -1,3 +1,9 @@
+        Int Array
+        
+        int[] myintarray = new int[5];
+        System.out.println("myintarray:"+ Arrays.toString(myintarray));         //myintarray:[0, 0, 0, 0, 0]
+        // when creating int array, it will fill out 0 automatically
+        See more: https://leetcode.com/problems/plus-one/
         
         
         List<Integer> v0 = new ArrayList<>();
