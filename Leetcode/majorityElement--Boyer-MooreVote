@@ -1,0 +1,81 @@
+// https://leetcode.com/problems/majority-element/
+// Solution: https://youtu.be/zOyOwDEF1Rc?t=209
+
+Input: [3,2,3]
+Output: 3
+
+Input: [2,2,1,1,1,2,2]
+Output: 2
+
+class Solution {
+    
+    public int majorityElement(int[] nums) { 
+        int max_key = -1;
+        // hashmap<value, occurences>
+        HashMap<Integer, Integer> hm = new HashMap<>();
+
+        int occurences = 1;
+        for(int i: nums){
+            if(!hm.containsKey(i)){
+                hm.put(i, 1);
+            }
+            
+            // already found a key==> increase value
+            else{
+                occurences = hm.get(i)+1;  // hm.get ==> retrieve value of the key i
+                hm.put(i, occurences);
+            }
+            
+            // Assumed that there is majority element (occurences) > nums.length
+            if (hm.get(i)>nums.length/2) {
+                max_key = i;
+                break;
+            }
+        }
+        return max_key;
+    }
+}
+------------------------------------Another Solution (Boyer-Moore Vote Algorithm)----------------------
+Boyer-Moore Vote Algorithm  ==> majority number of vote greater than n/2 (appear more than half the size of array)
+Pseudo code:
+Step 1: Find a candidate for majority element.
+Step 2: Check if this candidate is a majority element.
+
+Time Complexity: O(n)
+
+Input ==>  2 , 2 , 1 , 1 , 1 , 2 , 2
+
+    public int majorityElement(int[] nums) { 
+        Integer candidate = null;
+        int count = 0;    // keeping track of how many count appears
+        
+        // Iterate provided int array
+        for(int i=0;i<nums.length;i++){
+            if (count ==0){
+                candidate = nums[i];  // set candidate to first value
+                count = 1;    // count set to 1;
+                continue;     // skip next iteration
+            }
+            else{
+                if(candidate == nums[i]){
+                    count++; 
+                }
+                else{
+                    count--;
+        } 
+        // end of for loop
+        
+        if(count ==0){
+            return null;
+        }
+        
+        int counter =0
+        for(int i=0;i<nums.length;i++){
+            if (candidate = nums[i]){
+                counter++;
+            }
+      // Accoridng to Boyer-Moore Vote Algorithm  ==> majority number of vote greater than n/2
+        if(counter > nums.length/2){
+            return candidate;   // Found candidate (appear more than half the size of array)
+        }
+    }
