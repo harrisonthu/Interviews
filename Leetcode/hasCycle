@@ -1,7 +1,6 @@
 // This question from Leetcode
 // https://leetcode.com/explore/learn/card/linked-list/214/two-pointer-technique/1212/
-
-
+// Solution: https://leetcode.com/problems/linked-list-cycle/discuss/44614/Java-11ms-solution-with-HashSet-and-1ms-solution-without-extra-space
 
 /**
  * Definition for singly-linked list.
@@ -15,22 +14,39 @@
  *     }
  * }
  */
+ 
+ 
 public class Solution {
     public boolean hasCycle(ListNode head) {
-        if(head == null || head.next == null){
-            return false;
-        }
-        
+    
         ListNode slow = head;
-        ListNode fast = head.next;
+        ListNode fast = head;
         
-        while(slow!=fast){
-            if(fast == null || fast.next == null){
-                return false;
-            }
+        // e.g there is two elements in the input
+        //   ______________
+        //  | 1 | 2 | null |
+        // 1. slow = 1, fast = 1 (inital state)
+        // 2. slow = 2, fast = null  (inside while loop)  
+        while(fast != null && fast.next  != null){
             slow = slow.next;
             fast = fast.next.next;
+            if(slow == fast){
+                return true;
+            }
         }
-        return true;
+        return false;
     }
 }
+------------------------Another solution using HashSEt ----------------------
+ public boolean hasCycle(ListNode head) {
+		   if (head == null || head.next == null)
+			      return false;
+		   HashSet<ListNode> nodeSet = new HashSet<>();
+		   while(head != null) {
+			  if (nodeSet.contains(head))
+				     return true;
+			  nodeSet.add(head);
+			  head = head.next;
+		   }
+		   return false;
+	}
