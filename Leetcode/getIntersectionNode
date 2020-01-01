@@ -1,0 +1,71 @@
+
+// https://leetcode.com/problems/intersection-of-two-linked-lists/
+// Solution: https://leetcode.com/problems/intersection-of-two-linked-lists/discuss/49972/Clean-Java-solution-O(m-%2B-n)-time-O(1)-space
+// Best Solution: https://leetcode.com/problems/intersection-of-two-linked-lists/discuss/49785/Java-solution-without-knowing-the-difference-in-len!
+
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+public class Solution {
+    
+    // Return total number of nodes in the linkedlist
+    public int counter(ListNode l){
+        int n = 0;
+        while(l != null){
+            n = n+1;
+            l = l.next;
+        }
+        return n;   
+    }
+    
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        
+        // check if any of the nodes is null
+        if(headA == null || headB == null){
+            return null;
+        }
+        
+        ListNode l1 = headA; // cuz need to return original headA
+        ListNode l2 = headB; // cuz need to return original headB
+        
+        int n = counter(headA); // total length of headA
+        int m = counter(headB); // total length of headB
+        
+        // which nodes is longer, how long
+        int diff = Math.abs(n-m);
+        
+        // len of headA is longer than len of headB
+        if(n>m){
+            while(diff> 0){
+                l1 = l1.next;
+                diff--;
+            }
+        }
+        else{ // len of 'm' > len of 'n'
+            while(diff>0){
+                l2 = l2.next;
+                diff--;
+            }
+        }
+ 
+        // loop until headA != headB
+        // if they are same, return l1/l2
+        while(l1 != l2){
+            l1 = l1.next;
+            l2 = l2.next;
+        }
+        return l2; // return l1/l2(doesn't matter)
+    }
+    
+}
+
