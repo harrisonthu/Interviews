@@ -1,0 +1,8 @@
+
+Math Miscellaneous
+
+Mod %10 ==> remainder that is zero (eg.  120==> gives 0) 
+div /10 ==> all digits before last digit in int (eg.  120==> gives 12) 
+
+
+
