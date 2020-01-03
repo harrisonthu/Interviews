@@ -1,0 +1,45 @@
+
+// URL: https://leetcode.com/problems/rotate-array/
+// Solution: https://leetcode.com/problems/rotate-array/discuss/54250/Easy-to-read-Java-solution
+
+Example 1:
+
+Input: [1,2,3,4,5,6,7] and k = 3
+Output: [5,6,7,1,2,3,4]
+Explanation:
+rotate 1 steps to the right: [7,1,2,3,4,5,6]
+rotate 2 steps to the right: [6,7,1,2,3,4,5]
+rotate 3 steps to the right: [5,6,7,1,2,3,4]
+Example 2:
+
+Input: [-1,-100,3,99] and k = 2
+Output: [3,99,-1,-100]
+Explanation: 
+rotate 1 steps to the right: [99,-1,-100,3]
+rotate 2 steps to the right: [3,99,-1,-100]
+
+
+class Solution {
+    
+    // reverse the int array from left index to right index 
+    public void reverse(int[] nums, int l_index, int r_index){
+        while(l_index < r_index){
+            int temp = nums[l_index];
+            nums[l_index] = nums[r_index];
+            nums[r_index] = temp;
+            l_index++;
+            r_index--;
+        }
+    }
+    
+    public void rotate(int[] nums, int k) {
+        if(k>nums.length){
+            k = k%nums.length;
+        }
+        
+        //e.g Input: [1,2,3,4,5,6,7] and k = 3 
+        reverse(nums, 0, nums.length-1);  // output: [7,6,5,4,3,2,1]
+        reverse(nums, 0, k-1);          // output: [5,6,7, 4,3,2,1]
+        reverse(nums, k, nums.length-1);  // output: [5,6,7, 1,2,3,4]
+        
+    }
