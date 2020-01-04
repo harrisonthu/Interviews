@@ -1,0 +1,47 @@
+
+
+
+Binary Tree
+
+BFS <Queue>
+
+
+
+DFS <Stack>
+   1. Inorder   <Left, Root, Right>
+   2. Preorder  <Root, Left, Right>
+   3. Postorder <Left, Right, Root>
+
+For Preorder ==> add root, RIGHT, left for the tree so left subtree will be on top
+
+
+    public List<Integer> preorderTraversal(TreeNode root) {
+        
+        List<Integer> result = new ArrayList<Integer>();
+        Stack<TreeNode> mystack = new Stack<TreeNode>();
+        
+        if(root == null){
+            return result;
+        }
+        
+        mystack.push(root); // Initiate the stack with root
+        // stack is not empty
+        while(!mystack.isEmpty()){
+            TreeNode curr = mystack.pop();
+            int val = curr.val;
+            result.add(val);
+            
+            // Add right subtree (since it is Preorder ==> Root, Left, Right)
+            // But add right subtree first so left subtree will be top in the stack
+            if(curr.right != null){
+                mystack.push(curr.right);
+            }
+            
+            // Add left subtree (since it is Preorder ==> Root, Left, Right)
+            if(curr.left != null){
+                mystack.push(curr.left);
+            }
+            
+        }
+        return result;
+    }
