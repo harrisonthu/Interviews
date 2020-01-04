@@ -81,3 +81,37 @@ For Preorder ==> add root, RIGHT, left for the tree so left subtree will be on t
         }
         return result;
     }
+    
+    
+    
+    
+----------------------------(Post Order) ==> Left, Right, Root---------------------------------
+    
+        
+        
+        List<Integer> result = new ArrayList<Integer>();
+        Stack<TreeNode> mystack = new Stack<TreeNode>();
+        
+        if(root == null){
+            return result;
+        }
+        
+        // Post order ==> Left, Right, Root
+        
+        // add the first root to stack
+        mystack.push(root);
+        
+        // 
+        while(!mystack.isEmpty()){
+            // temp node to traverse
+            TreeNode curr = mystack.pop();
+            result.add(0,curr.val); // add with reverse order //add to the left in arraylist
+            if(curr.left != null){
+                mystack.push(curr.left); // Add to stack (left)
+            }
+            if(curr.right != null){
+                mystack.push(curr.right); // Add to stack (right)
+            }
+        }
+        return result;
+    }
