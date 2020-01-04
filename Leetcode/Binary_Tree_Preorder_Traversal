@@ -1,0 +1,57 @@
+
+URL for the problem: 
+https://leetcode.com/problems/binary-tree-preorder-traversal/
+Solution: https://leetcode.com/problems/binary-tree-preorder-traversal/discuss/45468/3-Different-Solutions
+
+
+NOTE: 
+Preordre ==> Root, Left, Right>
+Add ROOT, RIGHT, LEFT on stack in order so that Left subtree will be on top of the stack 
+
+
+
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public List<Integer> preorderTraversal(TreeNode root) {
+        
+        List<Integer> result = new ArrayList<Integer>();
+        Stack<TreeNode> mystack = new Stack<TreeNode>();
+        
+        if(root == null){
+            return result;
+        }
+        
+        mystack.push(root); // Initiate the stack with root
+        // stack is not empty
+        while(!mystack.isEmpty()){
+            TreeNode curr = mystack.pop();
+            int val = curr.val;
+            result.add(val);
+            
+            // Add right subtree (since it is Preorder ==> Root, Left, Right)
+            // But add right subtree first so left subtree will be top in the stack
+            if(curr.right != null){
+                mystack.push(curr.right);
+            }
+            
+            // Add left subtree (since it is Preorder ==> Root, Left, Right)
+            if(curr.left != null){
+                mystack.push(curr.left);
+            }
+            
+        }
+        return result;
+    }
+}
+
+
