@@ -13,8 +13,7 @@ DFS <Stack>
    3. Postorder <Left, Right, Root>
 
 For Preorder ==> add root, RIGHT, left for the tree so left subtree will be on top
-
-
+----------------------------(PreOrder) ==> Root, Left, Right---------------------------------
     public List<Integer> preorderTraversal(TreeNode root) {
         
         List<Integer> result = new ArrayList<Integer>();
@@ -42,6 +41,43 @@ For Preorder ==> add root, RIGHT, left for the tree so left subtree will be on t
                 mystack.push(curr.left);
             }
             
+        }
+        return result;
+    }
+
+
+----------------------------(In Order) ==> Left, Root, Right---------------------------------
+
+
+    public List<Integer> inorderTraversal(TreeNode root) {
+        
+        List<Integer> result = new ArrayList<Integer>();
+        Stack<TreeNode> mystack = new Stack<TreeNode>();
+        
+        if(root == null){
+            return result;
+        }
+        
+        //In order ==> Left, Root, Right
+        
+        // Initiate the curr node to add all left subtree until leaf
+        TreeNode curr = root;
+        
+        // While loop until left subtree left node (or) stack is not empty
+        while(curr !=null || !mystack.isEmpty()){
+            // add all nodes from left subtree until sub leaf nodes
+            while(curr != null){
+                mystack.push(curr);
+                curr = curr.left;
+            }
+            curr = mystack.pop();        // All left subtree Nodes
+            
+            int val = curr.val;          // Root Nodes
+            result.add(val);
+            // Since the outside while loop will break if curr.right == null
+            //if(curr.right!=null){
+            //mystack.push(curr.right);  // no need to add to stack, just set curr to right
+            curr = curr.right;         // Right Nodes 
         }
         return result;
     }
