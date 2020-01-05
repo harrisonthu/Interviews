@@ -32,6 +32,18 @@ class Solution {
             }
         }
 
+        // Priority class that implement Comparator
+        class PriorityQueueScore implements Comparator<Point>{
+            public int compare(double a, double b){
+                return 0;
+            }
+
+                @Override
+                public int compare(Point p1, Point p2) {
+                    return Double.compare(p1.distance,p2.distance);
+            }
+        }
+
 
     public int[][] kClosest(int[][] points, int K) {
         PriorityQueue<Point> mypq = new PriorityQueue<Point>(new PriorityQueueScore());
@@ -61,16 +73,7 @@ class Solution {
     }
 
 
-    class PriorityQueueScore implements Comparator<Point>{
-        public int compare(double a, double b){
-            return 0;
-        }
 
-        @Override
-        public int compare(Point p1, Point p2) {
-            return Double.compare(p1.distance,p2.distance);
-        }
-    }
 
 
 
