@@ -53,55 +53,59 @@ public class ZeroMatrix {
 
         // Iterate for this scenario
         // Need to consider *cell to zero out.
-        // [1, 1, 1, 1]
-        // __________
-        // [1*,|1, 0, 1]
-        // [1, |1, 1, 1]
-        // [1, |1, 1, 1]
+        // [1,   1,  1,  1]
+        // ______________
+        // [1*, |1, 0, 1]
+        // [1*, |1, 1, 1]
+        // [1*, |1, 1, 1]
         // row start from 1, NOT zero
+        // Check * section if there is 0, if so set out all row/col to right/down
+        
         for (int row = 1; row <= matrix.length - 1; row++) {
-            if (matrix[row][0] == 0) {
+            if (matrix[row][0] == 0) {  // check * section if there is 0
                 for (int i = 1; i <= matrix[0].length - 1; i++) {
-                    System.out.println("inside row: "+ matrix[row][i]);
-                    matrix[row][i] = 0;
+                    matrix[row][i] = 0;   // if 0 for first 
                 }
             }
         }
 
         // Iterate for this scenario
         // Need to consider *cell to zero out.
-        // [1, 1, *1, 1]
+        // [1, *1, *1, *1]
         // __________
-        // [1, |1, 0, 1]
-        // [1, |1, 1, 1]
-        // [1, |1, 1, 1]
+        // [1, |1,  0,  1]
+        // [1, |1,  1,  1]
+        // [1, |1,  1,  1]
         // col start from 1, NOT zero
+        // Check * section if there is 0, if so set out all row/col to right/down
+        
         for (int col = 1; col <= matrix[0].length - 1; col++) {
-
-            System.out.println("inside col now ! !");
-            System.out.println("matrix["+col+"][0] "+ matrix[0][col]);
             if (matrix[0][col] == 0) {
                 for (int i = 1; i <= matrix.length - 1; i++) {
-                    System.out.println("inside col: "+ matrix[i][col]);
                     matrix[i][col] = 0;
                 }
             }
         }
 
+        // Result
+        //  [* 0 0 0] 
+        //  [* 0 0 0] 
+        //  [* 0 0 0] 
         if (firstrowzero == true) {
             for (int row = 0; row <= matrix.length-1; row++) {
-                matrix[row][0] = 0; // set all values in first row in the matrix to zero
+                matrix[row][0] = 0; // set all values in first col in the matrix to zero
             }
         }
 
 
+        // Result
+        //  [* * * *] 
+        //  [0 0 0 0] 
+        //  [0 0 0 0] 
         if (firstcolzero == true) {
             for (int col = 0; col <= matrix[0].length-1; col++) {
-                matrix[0][col] = 0; // set all values in first col in the matrix to zero
+                matrix[0][col] = 0; // set all values in first row in the matrix to zero
             }
         }
-    
-
     }
-
 }
