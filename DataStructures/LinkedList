@@ -73,19 +73,19 @@ class MyLinkedList {
             addAtTail(val);
             return;
         }
-        if(index > this.length) {
-            return;
+        if(index > this.length) {       // will not be inserted
+            return;             
         }
         if(index == 0){
-            addAtHead(val);
+            addAtHead(val);             // Add at head of LL
             return;
         }
-        while(counter != (index -1)) {
+        while(counter != (index -1)) {      // Loop and set temp to the node before the ith index
             temp = temp.next;
             counter++;
         }
-        newNode.next = temp.next;
-        temp.next = newNode;
+        newNode.next = temp.next;           //       (newNode)
+        temp.next = newNode;                //  temp =========> a ==> b==>.....
         this.length++;
     }
     
