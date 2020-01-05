@@ -14,7 +14,7 @@ class MyLinkedList {
         }    
     } // End of Node class
     
-    
+    // Constructor of LinkedList
     public MyLinkedList(){
         this.length = 0;
         this.head = null;
