@@ -2,13 +2,18 @@
 Undirected graph ==> use "unordered pairs(use curly brackets)"==> (e.g. {v1,v2} )
 Directed graph ==> use "ordered pair(use brackets)"==> (e.g. (v1,v2) )
 
+      A-----B(Vertice<node>)
+     / \
+    /   \(edge)
+   /     \
+  D       C (Vertice<node>)
 
 Vertices ==> represent with "Nodes"
 Edge     ==> link/connection between Vertices/Nodes in graph
 
 Formula:
 (Directed graph)
-0 <= E <= n(n-1)   ==> meaning max num of edge in directed graph is within max number of nodes in graph(assume no self loop)
+0 <= E <= n(n-1)   ==> meaning max num of edges in directed graph is within max number of nodes in graph(assume no self loop)
 
 e.g 
 if 0<= |E| <= n(n-1) 
