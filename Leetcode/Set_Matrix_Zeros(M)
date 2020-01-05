@@ -1,15 +1,28 @@
+/*
 // Problem: https://leetcode.com/problems/set-matrix-zeroes/
 // Given a m x n matrix, if an element is 0, set its entire row and column to 0. Do it in-place.
 //
 // Solution:https://leetcode.com/problems/set-matrix-zeroes/discuss/408914/Java-100-runtime-O(1)-extra-space
+Input: 
+[
+  [1,1,1],
+  [1,0,1],
+  [1,1,1]
+]
+Output: 
+[
+  [1,0,1],
+  [0,0,0],
+  [1,0,1]
+]
+
+*/
 
 public class ZeroMatrix {
 
     public static void ZeroMatrix(int[][] matrix) {
     
         //Base Case: if Matrix length is less than 0(empty matrix), just return
-
-
 
         boolean firstrowzero = false; // check if any on the first row is zero
         boolean firstcolzero = false; // check if any on the first col is zero
@@ -47,9 +60,6 @@ public class ZeroMatrix {
         // [1, |1, 1, 1]
         // row start from 1, NOT zero
         for (int row = 1; row <= matrix.length - 1; row++) {
-
-            System.out.println("inside row now ! !");
-            System.out.println("matrix["+row+"][0] " + matrix[row][0]);
             if (matrix[row][0] == 0) {
                 for (int i = 1; i <= matrix[0].length - 1; i++) {
                     System.out.println("inside row: "+ matrix[row][i]);
