@@ -1,4 +1,5 @@
-// https://leetcode.com/problems/majority-element/
+// URL:
+https://leetcode.com/problems/majority-element/
 // Solution: https://youtu.be/zOyOwDEF1Rc?t=209
 
 Input: [3,2,3]
@@ -26,7 +27,7 @@ class Solution {
                 hm.put(i, occurences);
             }
             
-            // Assumed that there is majority element (occurences) > nums.length
+            // Assumed that there is majority element (occurences) > nums.length/2
             if (hm.get(i)>nums.length/2) {
                 max_key = i;
                 break;
