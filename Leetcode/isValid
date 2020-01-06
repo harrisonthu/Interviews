@@ -1,9 +1,18 @@
-
-
+/*
 URL for the problem:
 https://leetcode.com/problems/valid-parentheses/submissions/
 Solution: https://leetcode.com/problems/valid-parentheses/discuss/391842/Easy-to-understand-Java-solution
 
+Example 2:
+
+Input: "()[]{}"
+Output: true
+
+Example 3:
+
+Input: "(]"
+Output: false
+*/
 
 class Solution {
     public boolean isValid(String s) {
