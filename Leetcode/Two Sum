@@ -1,8 +1,11 @@
-
-
+/*
 URL for the problem:
 https://leetcode.com/problems/two-sum/
 
+Input:         nums = [2, 7, 11, 15], target = 9
+Explanation:   nums[0] + nums[1] = 2 + 7 = 9,
+Output:        [0, 1]
+*/
 
 class Solution {
      
@@ -25,13 +28,9 @@ class Solution {
                         //  instead of creating an array, create the array as we go
                         //  return new int[] { i, j }; 
                     }
-
                 }
             }
-            
         }
         return result;    
     }
 }
-
-
