@@ -9,7 +9,7 @@ Explanation: The array represents the integer 4321.
 
 Input2:    [9,9,9,9]
 Output2: [1,0,0,0,0]
-Explanation: The array represents the integer 4321.
+Explanation: The array represents the integer 9999+1 ==> 10000 (one more in size) (edge case).
 
 
 public int[] plusOne(int[] digits) {
@@ -20,7 +20,7 @@ public int[] plusOne(int[] digits) {
         for(int i=n-1; i>=0; i--){
             if((digits[i]) <9){
                 digits[i]++;
-                return digits;
+                return digits;   // return (so not doing afterwards, just return digit)
             }
             digits[i] = 0;
         }
