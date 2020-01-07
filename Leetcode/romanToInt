@@ -47,8 +47,8 @@ class Solution {
             // 'IV' ==> 'V'-'I'= 4 (since need to remove the value from 'I' from 'V')
             // 'IX' ==> 'X'-'I'= 9 (since need to remove the value from 'I' from 'X')
             if(prev < curr){
-                result -= prev;
-                result += curr-prev;
+                result -= prev;         // 'IX' = 9 not 11, since result(1)- prev(1) = 0 
+                result += curr-prev;    // add to X - I 
             }
             // In this scenario
             // 'XI' ==> 'X'+'I'= 11
