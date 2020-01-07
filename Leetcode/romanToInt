@@ -1,4 +1,4 @@
-
+/*
 URL for the problem:
 https://leetcode.com/problems/roman-to-integer/
 Solution: https://leetcode.com/problems/roman-to-integer/discuss/6746/Easy-to-understand-Java-solution-beats-98-Well-explained-with-comments.
@@ -15,6 +15,15 @@ Symbol     |    Value
   D        |   500
   M        |  1000
 ------------------------
+
+Input1: "IX"
+Output1: 9
+
+Input2: "LVIII"
+Output2: 58
+Explanation: L = 50, V= 5, III = 3.
+
+/*
 
 class Solution {
     public int romanToInt(String s) {
