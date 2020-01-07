@@ -4,6 +4,9 @@ URL for the problem:
 https://leetcode.com/problems/plus-one/
 Solution: https://leetcode.com/problems/plus-one/discuss/24082/My-Simple-Java-Solution
 
+Input: [4,3,2,1]
+Output: [4,3,2,2]
+Explanation: The array represents the integer 4321.
 
 public int[] plusOne(int[] digits) {
         
