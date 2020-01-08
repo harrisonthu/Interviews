@@ -1,0 +1,34 @@
+
+URL:
+https://leetcode.com/problems/valid-anagram/
+
+
+
+class Solution {
+    public boolean isAnagram(String s, String t) {
+  
+        if(s.length() != t.length()){
+            return false; // not anagram
+        }
+        
+        // 26 Character in Ascii table 
+        int[] asciitable = new int[26];
+        
+        // Loop through the input string 
+        for(int i=0;i < s.length();i++){
+            asciitable[s.charAt(i) - 'a']++; // add 1 to the asci value comparing with a= 97
+            asciitable[t.charAt(i) - 'a']--; // subtract 1 to the asci value comparing with a= 97
+            
+        }
+        // loop asciitable and check if any char is not empty,
+        // meaning some unmatached char left
+        for(int i:asciitable){
+            if(i!=0){
+                return false;
+            }
+        }
+        return true;
+        
+        
+    }
+}
