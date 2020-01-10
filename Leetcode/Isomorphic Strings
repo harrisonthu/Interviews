@@ -1,0 +1,61 @@
+URL
+https://leetcode.com/problems/isomorphic-strings
+
+Example 1:
+Input: s = "egg", t = "add"
+Output: true
+
+Example 2:
+Input: s = "foo", t = "bar"
+Output: false
+
+// Hashmap
+// -- containsKey()  ==> return true/false if the key is mapped (true), false if the key is not mapped/present
+// -- get(key)  ==> retrieve value of the key
+// -- put(a, b) ==> add value 'a' into 'key' and 'b' into 'value'
+//
+// checking if the solution is one-to-one fuction
+
+
+class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        // base case
+        if(s == null || t == null || s.length() != t.length()){
+            return false;
+        }
+        
+        HashMap<Character, Character>  hmap1 = new HashMap<Character, Character>();
+        HashMap<Character, Character>  hmap2 = new HashMap<Character, Character>();
+        
+        int i = 0;
+        int j = 0;
+        
+        // assume that s and t length are the same
+        while(i<s.length()){
+            char c1 = s.charAt(i);  // Another way: s.charAt(i++)
+            char c2 = t.charAt(j);  // Another way: s.charAt(j++)
+            
+            // if key is present   &&  map 'key' is current char same or not?
+            if(hmap1.containsKey(c1) && hmap1.get(c1) != c2){
+                return false;
+            }
+            // if key is present   &&  map 'key' is current char same or not?
+            if(hmap2.containsKey(c2) && hmap2.get(c2) !=c1){
+                return false;
+            }
+            
+            // this current char is never added 
+            if(!hmap1.containsKey(c1) && !hmap2.containsKey(c2)){
+                hmap1.put(c1, c2); // add current key from s to hmap1 (one-to-one relationship)
+                hmap2.put(c2, c1); // add current key from t to hmap2 (one-to-one relationship)
+            }
+            
+            i++;
+            j++;
+        }
+        
+        return true;
+        
+        
+    }
+}
