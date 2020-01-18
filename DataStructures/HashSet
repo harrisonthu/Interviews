@@ -1,0 +1,29 @@
+A set is like a hash map except it only stores keys, without values.
+
+A hash set gives constant-time lookup O(1)
+
+
+
+Question: Write a method that takes an integer flightLength (in minutes) and an array of integers movieLengths (in minutes)
+          and returns a boolean indicating whether there are two numbers in movieLengths whose sum equals flightLength.
+
+
+public static boolean canTwoMoviesFillFlight(int[] movieLengths, int flightLength) {
+
+    // movie lengths we've seen so far
+    Set<Integer> movieLengthsSeen = new HashSet<>();
+
+    for (int firstMovieLength : movieLengths) {
+
+        int matchingSecondMovieLength = flightLength - firstMovieLength;
+        if (movieLengthsSeen.contains(matchingSecondMovieLength)) {
+            return true;
+        }
+
+        movieLengthsSeen.add(firstMovieLength);
+    }
+
+    // we never found a match, so return false
+    return false;
+}
+
