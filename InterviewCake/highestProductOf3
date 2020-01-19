@@ -1,0 +1,61 @@
+URL:
+https://www.interviewcake.com/question/java/highest-product-of-3?course=fc1&section=greedy
+
+Given an array of integers, find the highest product you can get from three of the integers.
+
+Input:
+int[] arrayOfInts = new int[]{1, 10, -5, 1, -100};
+  
+  
+Solution:  
+  
+    public static int highestProductOf3(int[] intArray) {
+
+        // calculate the highest product of three numbers
+        
+        // Base case: less than 3 elements
+        if(intArray.length<3){
+            throw new IllegalArgumentException("Less than 3 ints !");
+        }
+        
+        
+        int highest = Math.max(intArray[0], intArray[1]);
+        int lowest  = Math.min(intArray[0], intArray[1]);
+        
+        // Initial set the first TWO VALUES to be products of high/lows
+        int highestProductOf2 = intArray[0]* intArray[1];
+        int lowestProductOf2  = intArray[0]* intArray[1];
+        
+        
+        int highestProductOf3 = intArray[0] * intArray[1] * intArray[2];
+        
+        
+        // Start looping from index 2
+        // since we got the hightes/lowest product of 2 before
+        for(int i=2;i<intArray.length;i++){
+            int current = intArray[i];
+            
+            highestProductOf3 = Math.max(Math.max(highestProductOf3, current*highestProductOf2), 
+                                                                     current*lowestProductOf2); 
+            
+            // Finding HIGHEST product of 2
+            highestProductOf2 = Math.max(Math.max(highestProductOf2, current*highest),
+                                                                     current*lowest);
+            // Finding LOWEST product of 2
+            lowestProductOf2  = Math.min(Math.min(lowestProductOf2, current*highest),
+                                                                     current*lowest);
+            
+            // if we have the highest
+            highest = Math.max(current, highest);
+            
+            // if we have the lowest
+            lowest = Math.min(current, lowest);
+        }
+        
+        return highestProductOf3;
+    }
+
+
+
+
+
