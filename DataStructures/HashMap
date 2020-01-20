@@ -65,11 +65,10 @@ public class HashMap
 ---------------------- Example of Hashmap(key, value)
 
 Example 1:
-
 Input: s = "egg", t = "add"
 Output: true
-Example 2:
 
+Example 2:
 Input: s = "foo", t = "bar"
 Output: false
 
