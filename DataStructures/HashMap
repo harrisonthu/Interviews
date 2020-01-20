@@ -5,7 +5,7 @@
 // 3. HashMap is generally preferred over HashTable if thread synchronization is not needed
 //
 // 4. Why HashTable doesn’t allow null and HashMap does?
-//      To successfully store and retrieve objects from a HashTable, the objects used as keys must implement the hashCode method and the equals method. 
+//      To successfully store and retrieve objects from a HashTable, the objects used as keys must implement hashCode & equals() method. 
 //      Since null is not an object, it can’t implement these methods. 
 //      HashMap is an advanced version and improvement on the Hashtable. HashMap was created later.
 
