@@ -1,16 +1,13 @@
 
-
-
 Binary Tree
-
-BFS <Queue>
-
-
-
-DFS <Stack>
+   1. BFS <Queue>
+   2. DFS <Stack>
+   
+DFS
    1. Inorder   <Left, Root, Right>
    2. Preorder  <Root, Left, Right>
    3. Postorder <Left, Right, Root>
+
 
 For Preorder ==> add root, RIGHT, left for the tree so left subtree will be on top
 ----------------------------(PreOrder) ==> Root, Left, Right---------------------------------
