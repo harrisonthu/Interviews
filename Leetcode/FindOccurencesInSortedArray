@@ -1,0 +1,34 @@
+
+Problem 1:
+Count number of occurrences (or frequency) in a sorted array (O(log n))
+
+    
+    // Returns number of times x 
+    // occurs in arr[0..n-1] 
+    static int countOccurrences(int arr[], int n, int x){ 
+        int index = binarySearch(arr, 0, n - 1, x); 
+  
+        // If element is not present 
+        if (index == -1) 
+            return 0; 
+  
+        // Count elements on left side. 
+        int count = 1; 
+        int left = index - 1;  // set left to the value before first found occurence (using Binary Search) 
+        
+        while (left >= 0 && arr[left] == x){ 
+            count++; 
+            left--; 
+        }
+  
+        // Count elements  
+        // on right side. 
+        int right = ind + 1; 
+        
+        while (right < n && arr[right] == x){ 
+            count++; 
+            right++; 
+        } 
+  
+        return count; 
+    } 
