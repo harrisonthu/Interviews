@@ -19,6 +19,7 @@ e.g isAnagram("BCD", "bcd") = true
         // Create a int array containing all possible characters in ASCII table (only 128 for unique character
         // But created 256 size for non-alphabet character(such as NUL, space etc..)
         int[] letters = new int[1 << 8]; // bit shifting to left to 8 bit==> 1 0000 0000 ==> value = 256
+        // basically meant: int[] letters = new int [256];
 
         for (char c : s1.toCharArray()) {
             System.out.println(letters[c]); // add all 0s to 256 spots, and add 1 for 98th, 99th 100(based on the ASCII table
