@@ -2,6 +2,9 @@
 // Anagram 
 // Question(Q14) :   Given two strings, write a function to determine whether they are anagrams.  
 // Solution:         https://www.byte-by-byte.com/anagrams/
+
+e.g isAnagram("BCD", "bcd") = true
+
 //public class Anagram {
 
 
