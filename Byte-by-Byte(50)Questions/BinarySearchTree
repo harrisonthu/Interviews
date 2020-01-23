@@ -51,9 +51,9 @@ public class BinarySearch {
             }
 
             //  In this scenario, difference > 0
-            //  _________________
-            // |____|__5___|_____|
-            // i= 0    1      2
+            //  _______________________
+            // |____|_____|__5___|_____|
+            // i= 0    1     2      3
             //
             //  5 in the array is larger than the index (1)
             else if (difference > mid) {
