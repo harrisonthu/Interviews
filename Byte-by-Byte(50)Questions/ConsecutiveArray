@@ -13,7 +13,7 @@ import java.util.HashSet;
 
 public class ConsecutiveArray {
 
-    // Function to return the maxinum consecutive sequence number in array
+    // Function to return the maximum consecutive sequence number in array
     public static int ConsecutiveArray(int[] arr) {
         HashSet<Integer> hs = new HashSet<>();
         for (int i : arr) {
