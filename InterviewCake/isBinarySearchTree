@@ -1,0 +1,94 @@
+    Question URL:
+    https://www.interviewcake.com/question/java/bst-checker?course=fc1&section=trees-graphs
+    
+    Write a method to check that a binary tree ↴ is a valid binary search tree. 
+    
+    
+    // Create class for NodeBounds
+    //   _____________________________
+    //  |       BinaryTreeNode        |
+    //  |-----------------------------|
+    //  | +int                 value  |
+    //  | +BinaryTreeNode      left   |
+    //  | +BinaryTreeNode      right  |
+    //  |_____________________________|
+    
+    public class BinaryTreeNode {
+
+    public int value;
+    public BinaryTreeNode left;
+    public BinaryTreeNode right;
+
+    public BinaryTreeNode(int value) {
+        this.value = value;
+    }
+
+    public BinaryTreeNode insertLeft(int leftValue) {
+        this.left = new BinaryTreeNode(leftValue);
+        return this.left;
+    }
+
+    public BinaryTreeNode insertRight(int rightValue) {
+        this.right = new BinaryTreeNode(rightValue);
+        return this.right;
+    }
+}
+    
+    // Create class for NodeBounds
+    //   ______________________________
+    //  |          NodeBounds          |
+    //  |------------------------------|
+    //  | +BinaryTreeNode         node |
+    //  | +int               lowerbound|
+    //  | +int               upperbound|
+    //  |______________________________|
+    
+    public static class NodeBounds{
+        public BinaryTreeNode node;
+        public int lowerbound;
+        public int upperbound;
+        
+        
+    public NodeBounds(BinaryTreeNode node,int lowerbound,int upperbound){
+        this.node = node;
+        this.lowerbound = lowerbound;
+        this.upperbound = upperbound;
+    }
+    
+  }  // End of NodeBounds class
+
+
+    public static boolean isBinarySearchTree(BinaryTreeNode root) {
+
+        // Iterative method
+        Deque<NodeBounds> myarray = new ArrayDeque<NodeBounds>();
+        
+        myarray.push(new NodeBounds(root, Integer.MIN_VALUE, Integer.MAX_VALUE));
+        
+        
+        // depth-first traversal
+        while(!myarray.isEmpty()){
+            // pull all of the data from the array
+            NodeBounds nb = myarray.pop();
+            BinaryTreeNode currnode = nb.node;
+            int lowerbound = nb.lowerbound;
+            int upperbound = nb.upperbound;
+            
+            // Getting not valid value (larger than max int) or (lower than min integer)
+            if(currnode.value<lowerbound || currnode.value > upperbound){
+                return false;
+            }
+            
+            // Trasverse to the left (if left node is not null)
+            if(currnode.left!=null){
+                myarray.push(new NodeBounds(currnode.left,upperbound, currnode.value));
+            }
+            
+            // Trasverse to the right (if right node is not null)
+            if(currnode.right!=null){
+                myarray.push(new NodeBounds(currnode.right,currnode.value, upperbound));            }        
+        
+        }
+
+        return true;
+    }
