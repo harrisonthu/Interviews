@@ -17,7 +17,7 @@ public class MatrixProduct {
         }
         // Create MinCache/MaxCache
         // Reason because last cell(rightest bottom value is negative, in that scenario,
-        // we have to pick the smaller of the two possible values (top/left cells)
+        // we have to pick the smaller of the two possible values from (top/left cell)
         int[][] MaxCache = new int[matrix.length][matrix[0].length];
         int[][] MinCache = new int[matrix.length][matrix[0].length];
         for (int row = 0; row < matrix.length; row++) {
