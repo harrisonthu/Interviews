@@ -20,10 +20,11 @@ public class FindDuplicates {
         HashSet<Integer> myhs = new HashSet<Integer>();
         HashSet<Integer> dupeslist = new HashSet<>();
 
+        // Loop through the input
         for (int i = 0; i < arr.length; i++) {
             // if current value in arry contain in dupeslist<Hashset>
             if (myhs.contains(arr[i])) {
-                dupeslist.add(arr[i]);
+                dupeslist.add(arr[i]);  // add to dupeslist
                 continue;
             }
             // Not included in dupeslist, so add it to hashset
@@ -36,7 +37,7 @@ public class FindDuplicates {
     }
 
     public static void main(String[] args) {
-        int[] arr = {2 , 1, 2, 1,7,8,8,8,8,8};
+        int[] arr = {2,1,2,1,7,8,8,8,8,8};
         System.out.println(FindDuplicates(arr));
 
     }
