@@ -24,7 +24,7 @@ public class ConsecutiveArray {
         int max = 0; // return Max consecutive sequence length
         
         for (int i : hs) {      // Loop in the hashset (no duplicates)
-            if (hs.contains(i - 1)) { // TEST: i-1 NOT index
+            if (hs.contains(i - 1)) { // i-1 value NOT index
                 continue;       // if found value less than current value in Hashset, ignore
             } else {
                 int length = 0;
