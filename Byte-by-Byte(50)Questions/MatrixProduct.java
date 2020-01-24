@@ -3,8 +3,23 @@
 // Question(Q3) : Given a matrix, ﬁnd the path from top left to bottom right
 //                with the greatest product by moving only down and right.
 // Solution:      https://www.byte-by-byte.com/matrixproduct/
-//
-
+// E.g
+//  
+//  [1, 2, 3]
+//  [4, 5, 6]
+//  [7, 8, 9]
+//  1 -> 4 -> 7 -> 8 -> 9
+//  Ans: 2016
+ 
+//  [-1, 2, 3]
+//  [4, 5, -6]
+//  [7, 8, 9]
+//   
+//  -1 -> 4 -> 5 -> -6 -> 9
+//  Ans: 1080
+//  
+//  
+//  
 public class MatrixProduct {
 
     // Function to solve the problem
