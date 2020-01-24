@@ -40,11 +40,12 @@ public class MatrixProduct {
                 int MinVal = Integer.MAX_VALUE;  // possible greatest Min val so far in this path
                 int MaxVal = Integer.MIN_VALUE;  // possible greatest Max val so far in this path
                 // First row/First Col ==> Carry it to the first row/col in MaxCache/MinCache
+                //  Since we need to copy the product from top/left since there is no 2 options to check max/min
                 if (row == 0 && col == 0) {
-                    MaxVal = matrix[row][col];
+                    MaxVal = matrix[row][col]; // set first value of input matrix to MaxVal
                     MinVal = matrix[row][col];
                 }
-                // When row is greater than 1,
+                // Starting from second row
                 if (row > 0) {
                     // TempMaxVal = current cell of possible Max value while looping
                     int TempMaxVal = Math.max(matrix[row][col] * MinCache[row - 1][col], matrix[row][col] * MaxCache[row - 1][col]);
@@ -52,6 +53,7 @@ public class MatrixProduct {
                     int TempMinVal = Math.min(matrix[row][col] * MinCache[row - 1][col], matrix[row][col] * MaxCache[row - 1][col]);
                     MinVal = Math.min(TempMinVal, MinVal);
                 } 
+              
                 if (col > 0) {
                     // TempMaxVal = current cell of possible Max value while looping
                     int TempMaxVal = Math.max(matrix[row][col] * MinCache[row][col - 1], matrix[row][col] * MaxCache[row][col - 1]);
@@ -59,8 +61,8 @@ public class MatrixProduct {
                     int TempMinVal = Math.min(matrix[row][col] * MinCache[row][col - 1], matrix[row][col] * MaxCache[row][col - 1]);
                     MinVal = Math.min(TempMinVal, MinVal);
                 }
-                MaxCache[row][col] = MaxVal;
-                MinCache[row][col] = MinVal;
+                MaxCache[row][col] = MaxVal;  // Return total max val so far
+                MinCache[row][col] = MinVal;  // Return total min val so far
             }
         }
         return MaxCache[MaxCache.length - 1][MaxCache[0].length - 1];
