@@ -1,0 +1,8 @@
+
+--------------------- Facebook ------------------------------
+
+How will you design your partitions for the hive table which stores active users? 
+How does your design impact queries like determining monthly/ yearly active users). 
+Here, you need to think from a product owner's perspective to figure out what are the criteria you would like to track to determine the success of the product.
+(e.g. if it is an app, monthly install rate, monthly active users, uninstall rates etc.). 
+Next, you will be asked to write SQL/ Python code to implement these metrics on your proposed design.
