@@ -1,0 +1,16 @@
+ --------------------- Facebook - Data Engineer ----------
+
+Sample SQL questions:
+1) Find the largest value in a given column.
+2) Find the second largest value in a given column.
+3) For each department, find the highest paid person and their salary.
+
+Example Output:
++----------------+----------------+------------------+---------+
+| first_name | last_name | dept_name | salary |
++----------------+----------------+------------------+----------+
+| John | Smith | Reporting | 20000 |
+| Ian | Peterson | Engineering | 80000 |
+| John | Mills | Marketing | 50000 |
+| Ava | Muffinson | Silly Walks | 10000 |
++----------------+-----------------+-------------------+----------+
