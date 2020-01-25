@@ -7,10 +7,10 @@ Example Table(Station):
 +----------------+----------------+-------+
 | ID |   CITY  | STATE | LAT_N | LONG_W
 +----------------+----------------+-------+
-| 791 | Loma   | MD  | 34.88529336 |
-| 824 | Albany | AR  | 156.72891710 |
-| 698 | Onaway | LA  | 46.70383 |
-| 438 | Irvine | IL  | 90.238 |
+| 791 | Loma   | MD  | 34.88529336 | 73.41609
+| 824 | Albany | AR  | 156.72891710 | 97.942
+| 698 | Onaway | LA  | 46.70383 | 151.87
+| 438 | Irvine | IL  | 90.238 | 59.68
 +----------------+----------------+-------+
 SQL questions:
 1) Query a list of CITY names from STATION with even ID numbers only and exclude duplicates from your answer.
