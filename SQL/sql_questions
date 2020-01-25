@@ -1,6 +1,37 @@
 HakerRank
 https://www.hackerrank.com/domains/sql
 
+Hackerrank:
+https://www.hackerrank.com/challenges/weather-observation-station-3/problem
+Example Table(Station):
++----------------+----------------+-------+
+| ID |   CITY  | STATE | LAT_N | LONG_W
++----------------+----------------+-------+
+| 791 | Loma   | MD  | 34.88529336 |
+| 824 | Albany | AR  | 156.72891710 |
+| 698 | Onaway | LA  | 46.70383 |
+| 438 | Irvine | IL  | 90.238 |
++----------------+----------------+-------+
+SQL questions:
+1) Query a list of CITY names from STATION with even ID numbers only and exclude duplicates from your answer.
+      - Oracle/Postgre sql  ==> Use "Mod" function
+      --SELECT CITY FROM STATION WHERE MOD([ID],2) =0 
+
+      -- SQL SERVER 
+      SELECT DISTINCT(CITY) FROM STATION WHERE [ID]%2 =0 
+
+
+2) Find the difference between the total number of CITY entries in the table and the number of distinct CITY entries in the table
+      - Oracle/Postgre sql  ==> Use "Mod" function
+      --SELECT CITY FROM STATION WHERE MOD([ID],2) =0 
+
+      -- SQL SERVER 
+      SELECT DISTINCT(CITY) FROM STATION WHERE [ID]%2 =0 
+
+
+
+
+
 
 --------------------- Facebook - Data Engineer ----------
 
