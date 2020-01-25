@@ -1,5 +1,8 @@
 HakerRank
 https://www.hackerrank.com/domains/sql
+PostgreSQL
+https://www.postgresqltutorial.com/
+
 
 Hackerrank:
 https://www.hackerrank.com/challenges/weather-observation-station-3/problem
@@ -22,11 +25,7 @@ SQL questions:
 
 
 2) Find the difference between the total number of CITY entries in the table and the number of distinct CITY entries in the table
-      - Oracle/Postgre sql  ==> Use "Mod" function
-      --SELECT CITY FROM STATION WHERE MOD([ID],2) =0 
-
-      -- SQL SERVER 
-      SELECT DISTINCT(CITY) FROM STATION WHERE [ID]%2 =0 
+      SELECT COUNT([CITY]) - COUNT(DISTINCT([CITY])) FROM STATION;
 
 
 
