@@ -1,0 +1,18 @@
+https://www.postgresqltutorial.com/
+
+
+
+---- Post Gre Tables
+
+--  'serial'   ==>  'integer' in SQL Server
+--  'numeric'  ==>  'float' in SQL Server
+Create table STATION (
+    ID_1 serial PRIMARY KEY,
+    CITY varchar(255), 
+    STATE_1 varchar(255),
+    LAT_N numeric,
+    LONG_W numeric
+    );
+
+-- How to add new items into PostGreSQl, if you omit any column that automatically add NULL value
+INSERT INTO STATION (ID_1, CITY, STATE_1, LAT_N, LONG_W) VALUES (111, 'She', 'he', 123.2, 424.5);
