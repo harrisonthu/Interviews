@@ -32,6 +32,9 @@ SQL questions:
       -- SQL SERVER 
       SELECT DISTINCT city from station where city LIKE '[a, e, i, o, u]%' ;
 
+4) Query the list of CITY names ending with vowels (a, e, i, o, u) from STATION. Your result cannot contain duplicates.
+      -- SQL SERVER 
+      SELECT DISTINCT(CITY) FROM STATION WHERE RIGHT(CITY,1) IN ('a','i','e','o','u'); 
 
 
 
