@@ -6,6 +6,8 @@ https://www.postgresqltutorial.com/
 Functions to use:
    1.  Floor (Round Down to the nearest Integer)  e.g Floor(Avg([column_name]))  (PostGreSQL/ SQL SERVER)
    2.  Round (Round up to the nearest Integer)    e.g Round(Avg([column_name]))  (PostGreSQL/ SQL SERVER)
+   3.  MAX
+   4.  MIN
 
 Use of Round is improper here since it rounds Up in cases 
 where decimal values are >= 0.5. Floor should be used instead since we're asked to round Down. 
