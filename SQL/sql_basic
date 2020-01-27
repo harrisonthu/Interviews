@@ -8,6 +8,7 @@ Functions to use:
    2.  Round (Round up to the nearest Integer)    e.g Round(Avg([column_name]))  (PostGreSQL/ SQL SERVER)
    3.  MAX
    4.  MIN
+   5.  CAST                                       e.g ([column] AS DECIMAL (10,4) (PostGreSQL/ SQL SERVER)
 
 Use of Round is improper here since it rounds Up in cases 
 where decimal values are >= 0.5. Floor should be used instead since we're asked to round Down. 
