@@ -19,11 +19,36 @@ For example, given the above Employee table, the query should return 200 as the 
 | 200                 |
 +---------------------+
 
+--------START (Using "Offset"/"Limit") ----------- 
 
-Solution:
+SELECT [Salary] AS SecondHighestSalary
+FROM Employee
+ORDER BY [Salary] DESC
+offset 1 ROWS     -- Skip one row
+FETCH NEXT 1 ROWS ONLY;
 
+   ---- This above solution will return blank if the result is empty ----
+   -- To fix this, see below:--
+
+select [Salary] as SecondHighestSalary
+FROM Employee 
+UNION
+Select NULL 
+Order by SecondHighestSalary DESC
+LIMIT 1 offset 1
+
+
+
+--------END (Using "Offset"/"Limit") -----------
+
+Solution (without using "Limit" or "offset"):
 
 SELECT MAX([Salary]) AS  SecondHighestSalary
 FROM Employee
 WHERE [Salary] <>  (SELECT MAX([Salary])
                     FROM Employee)
+
+
+SELECT max(Salary)
+FROM Employee
+WHERE Salary < (SELECT max(Salary) FROM Employee)
