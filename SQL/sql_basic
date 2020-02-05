@@ -3,6 +3,17 @@ https://www.hackerrank.com/domains/sql
 PostgreSQL
 https://www.postgresqltutorial.com/
 
+General:
+
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+ORDER BY column_list [ASC |DESC]
+OFFSET offset_row_count {ROW | ROWS}
+FETCH {FIRST | NEXT} fetch_row_count {ROW | ROWS} ONLY
+
+
 Functions to use:
    1.  Floor (Round Down to the nearest Integer)  e.g Floor(Avg([column_name]))  (PostGreSQL/ SQL SERVER)
    2.  Round (Round up to the nearest Integer)    e.g Round(Avg([column_name]))  (PostGreSQL/ SQL SERVER)
