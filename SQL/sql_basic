@@ -14,6 +14,10 @@ OFFSET offset_row_count {ROW | ROWS}      --- Offset = skip
 FETCH {FIRST | NEXT} fetch_row_count {ROW | ROWS} ONLY
 
 
+--- Notes:
+Mysql has "limit"
+Sql server(Tsql) has "top" 
+
 Functions to use:
    1.  Floor (Round Down to the nearest Integer)  e.g Floor(Avg([column_name]))  (PostGreSQL/ SQL SERVER)
    2.  Round (Round up to the nearest Integer)    e.g Round(Avg([column_name]))  (PostGreSQL/ SQL SERVER)
