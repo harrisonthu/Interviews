@@ -10,7 +10,7 @@ FROM table_name
 WHERE condition
 GROUP BY column_name(s)
 ORDER BY column_list [ASC |DESC]
-OFFSET offset_row_count {ROW | ROWS}
+OFFSET offset_row_count {ROW | ROWS}      --- Offset = skip 
 FETCH {FIRST | NEXT} fetch_row_count {ROW | ROWS} ONLY
 
 
