@@ -19,8 +19,6 @@ public class reversestack {
         reverse(stack);
         insertatBottom(stack, temporary);
         return stack;
-
-
     }
 
     public void insertatBottom(Stack<Integer> stack, int x) {
@@ -32,7 +30,6 @@ public class reversestack {
         insertatBottom(stack, x);
         stack.push(temp);
         return;
-
     }
 
 }
