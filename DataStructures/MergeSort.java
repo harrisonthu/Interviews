@@ -5,7 +5,6 @@
 
 public class MergeSort {
 
-
     // e.g
     //
     //          _________________________________
@@ -17,8 +16,6 @@ public class MergeSort {
     // Second subarray is arr[m+1..r]
     void merge(int arr[],int l, int m, int r){
 
-        // TEST: Print out the first time when merge function run??
-        // System.out.println ("inside merge: l = "+ l +" m="+ m + " r="+r);
         // initialize size of two subarrays
         int n1 = m-l+1; // first subarray size
         int n2 = r-m;   // second subarray size
