@@ -73,8 +73,8 @@ public class BinaryTreeNode {
 }
 
 
-
-Write a method to find the 2nd largest element in a binary search tree. 
+// Write a method to find the largest element in a binary search tree. 
+  
   private static int findLargest(BinaryTreeNode rootNode) {
     if (rootNode == null) {
         throw new IllegalArgumentException("Tree must have at least 1 node");
@@ -84,6 +84,8 @@ Write a method to find the 2nd largest element in a binary search tree.
     }
     return rootNode.value;
 }
+
+//Write a method to find the 2nd largest element in a binary search tree. 
 
 public static int findSecondLargest(BinaryTreeNode rootNode) {
     if (rootNode == null || (rootNode.left == null
