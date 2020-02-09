@@ -3,12 +3,9 @@ URL for the problem:
 https://leetcode.com/problems/binary-tree-preorder-traversal/
 Solution: https://leetcode.com/problems/binary-tree-preorder-traversal/discuss/45468/3-Different-Solutions
 
-
 NOTE: 
 Preorder ==> Root, Left, Right>
 Add ROOT, RIGHT, LEFT on stack in order so that Left subtree will be on top of the stack 
-
-
 
 
 /**
