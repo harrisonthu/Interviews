@@ -109,7 +109,16 @@ public static int findSecondLargest(BinaryTreeNode rootNode) {
         return findLargest(rootNode.left);
     }
 
-    // case: we're at parent of largest, and largest has no left subtree,
+
+         ( 5 )
+        /     \
+      (3)     (8)
+     /  \     /  \
+   (1)  (4) (7)  (12)
+                    \
+                    (15)
+                  
+    // case: we're at parent of largest, and largest has no left subtree (see above image),
     // so 2nd largest must be current node
     if (rootNode.right != null
             && rootNode.right.left == null
@@ -120,12 +129,4 @@ public static int findSecondLargest(BinaryTreeNode rootNode) {
     // otherwise: step right
     return findSecondLargest(rootNode.right);
 }
-
-
-
-
-
-
-
-
 
