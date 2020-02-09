@@ -97,8 +97,7 @@ For Preorder ==> add root, RIGHT, left for the tree so left subtree will be on t
         
         // add the first root to stack
         mystack.push(root);
-        
-        // 
+
         while(!mystack.isEmpty()){
             // temp node to traverse
             TreeNode curr = mystack.pop();
