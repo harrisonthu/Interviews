@@ -8,6 +8,26 @@ DFS
    2. Preorder  <Root, Left, Right>
    3. Postorder <Left, Right, Root>
 
+See more: https://www.programiz.com/dsa/heap-sort
+Binary Tree Relationship between array indexs and tree elements:
+
+  Notes: Reading element from int arry to binary tre
+  
+  If the index of any element in the array is i, the element in the index 
+  2i+1 will become the (left child)
+  2i+2 index will become the (right child). 
+  Also, the parent of any element at index i is given by the lower bound of (i-1)/2.
+
+        _________________________
+Array: |_1_|_12_|_9_|_5_|_6_|_10_|
+index: |_0___ 1___2___3___4__ 5__|
+
+               1                           i
+             /   \                       /   \
+            12     9    ==>           (2i+1) (2i+2)
+           / \    / 
+          5  6   10 
+
 
 For Preorder ==> add root, RIGHT, left for the tree so left subtree will be on top
 ----------------------------(PreOrder) ==> Root, Left, Right---------------------------------
