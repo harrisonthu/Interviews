@@ -1,0 +1,70 @@
+Leetcode URL:
+https://leetcode.com/problems/merge-k-sorted-lists
+
+
+-----------------------  Using Merge Sort in linkedList Format (Divide and Conquer algorithm) -----------------------
+
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode mergeKLists(ListNode[] lists) {
+        // Base case
+        if(lists.length ==0){
+            return null;
+        }
+        return partition(lists, 0,lists.length-1);
+    }
+    
+    // Partitiion method for splitting element into one single element
+    // similar to splitting method in Merge sort
+    // Divide and conquer algorithm
+    
+    public ListNode partition(ListNode[] lists, int start_index,int end_index){
+        if(start_index == end_index){
+            return lists[start_index]; // doesn't matter, just returning start/end
+        }
+        
+        int mid = (start_index+end_index)/2;
+        
+        // Split until 1 element left
+        ListNode l1 = partition(lists, start_index, mid);
+        ListNode l2 = partition(lists, mid+1, end_index);
+        
+        return mergetwo(l1,l2);
+    }
+    
+    public ListNode mergetwo(ListNode l1, ListNode l2){
+        if(l1== null){
+            return l2;
+        }
+        if(l2== null){
+            return l1;
+        }
+        
+        //  lets says,      
+        //  1 -> 4 -> 5  (l1)
+        //  2 -> 3 -> 4  (l2)
+        //  
+        if(l1.val < l2.val){
+            l1.next = mergetwo(l1.next, l2);
+            return l1;
+        }
+        //  lets says,      
+        //  2 -> 5 -> 4  (l1)
+        //  1 -> 3       (l2)
+        //  
+        else {
+            l2.next = mergetwo(l1, l2.next);
+            return l2;
+        }
+        // mergetwo funciton end
+    }
+    
+}
