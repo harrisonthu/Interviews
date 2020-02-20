@@ -23,6 +23,12 @@ public class ZeroMatrix {
     public static void ZeroMatrix(int[][] matrix) {
     
         //Base Case: if Matrix length is less than 0(empty matrix), just return
+        if(matrix.length <= 0){ // checking row is empty
+            return;
+        }
+        if(matrix[0].length <= 0){ // checking col is empty
+            return;
+        }
 
         boolean firstrowzero = false; // check if any on the first row is zero
         boolean firstcolzero = false; // check if any on the first col is zero
