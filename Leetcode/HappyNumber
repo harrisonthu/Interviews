@@ -39,7 +39,7 @@ class Solution {
                 return false; // since having 4 gives you loop
             }
             n= sum;
-        }
+        } // End while loop
         
     }
 }
