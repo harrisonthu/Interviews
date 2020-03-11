@@ -1,0 +1,11 @@
+
+In breadth-first search we explore all the nearest possibilities by finding all possible successors and enqueue them to a queue.
+
+  Create a queue
+  Create a new choice point
+  Enqueue the choice point onto the queue
+  while (not found and queue is not empty)
+      Dequeue the queue
+      Find all possible choices after the last one tried
+      Enqueue these choices onto the queue
+  Return
