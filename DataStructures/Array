@@ -5,6 +5,13 @@
         // when creating int array, it will fill out 0 automatically
         See more: https://leetcode.com/problems/plus-one/
         
+        Length vs Length()
+        
+                - array.length: length is a final variable applicable for arrays. 
+        
+                - string.length() : length() method is a final variable which is applicable for string objects. 
+                length() method returns the number of characters presents in the string.
+        
         
         List<Integer> v0 = new ArrayList<>();
         List<Integer> v1;                           // v1 == null
