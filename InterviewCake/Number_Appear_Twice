@@ -1,0 +1,26 @@
+    URL: https://www.interviewcake.com/question/java/which-appears-twice
+    
+    
+    // Sample input: 1,2,3,4,4,5,6,7  ; n = 7
+    public static int findRepeat(int[] numbers) {
+
+        // find the number that appears twice
+        if(numbers.length < 2){
+            throw new IllegalArgumentException("Finding duplicate requires at least 2 numbers !");
+        }
+        //Find the actual number n
+        int n = numbers.length-1;
+        
+        // Finding total sum using Triangle Sum serires formula: (n^2+n)/2
+        // For more details: https://www.interviewcake.com/question/java/which-appears-twice
+        
+        int sum_triangle_formula = (n*n+n)/2;  // Total sum that should be
+        
+        int totalcurrentseriesSum = 0; // Total sum with duplicate value
+        
+        for(int i=0;i<numbers.length;i++){
+            totalcurrentseriesSum += numbers[i];
+        }
+
+        return totalcurrentseriesSum-sum_triangle_formula;
+    }
