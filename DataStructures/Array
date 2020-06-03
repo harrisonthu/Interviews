@@ -13,7 +13,7 @@
                 length() method returns the number of characters presents in the string.
         
         
-        List<Integer> v0 = new ArrayList<>();
+        List<Integer> v0 = new ArrayList<>(); 
         List<Integer> v1;                           // v1 == null
 
         // 2. cast an array to a vector
