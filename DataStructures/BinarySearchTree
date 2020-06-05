@@ -6,7 +6,7 @@ public class BinarySearchTree {
         Node left;
         Node right;
     }
-
+    
     // Root of the Node
     Node root;
 
