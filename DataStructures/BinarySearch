@@ -1,0 +1,46 @@
+Binary Search: 
+Search a sorted array by repeatedly dividing the search interval in half. 
+Begin with an interval covering the whole array. If the value of the search key is less than the item in the middle of the interval
+narrow the interval to the lower half. Otherwise narrow it to the upper half. 
+Repeatedly check until the value is found or the interval is empty.
+
+For more details:
+https://www.geeksforgeeks.org/binary-search/
+
+
+class BinarySearch{
+
+
+  public int BinarySearch(int arr[], int lower, int higher, int value){
+    
+    if(higher > 1){ // the array is bigger than size 1
+    
+      int mid = lower + (higher - lower)/2;  // find mid index
+
+      // found the finding value at mid index
+      if(arr[mid] == value){
+        return mid;
+      }
+
+      // When mid-index value is lower than the value that we are looking for
+      // Search for right side of the array
+      if (arr[mid] < value) {
+        return BinarySearch(arr[], mid+1, higher, value);
+      }
+      
+      // Search for left side of the array
+      if (arr[mid] > value){ 
+        return BinarSearch(arr[], lower, mid-1, value);
+      }
+
+    }
+    return -1;
+}
+
+
+
+
+
+
+
+
