@@ -3,6 +3,20 @@ A set is like a hash map except it only stores keys, without values.
 A hash set gives constant-time lookup O(1).
 
 
+   HashSet<String> h = new HashSet<String>(); 
+  
+   // Adding elements into HashSet usind add() 
+   h.add("India"); 
+   h.add("Australia"); 
+   h.add("South Africa"); 
+   h.add("India"); // adding duplicate elements 
+  
+   // Displaying the HashSet 
+   System.out.println(h); 
+   System.out.println("List contains India or not:"+ h.contains("India")); 
+                           
+--------------------------------------------------------------------------------------------
+
 
 Question: Write a method that takes an integer flightLength (in minutes) and an array of integers movieLengths (in minutes)
           and returns a boolean indicating whether there are two numbers in movieLengths whose sum equals flightLength.
