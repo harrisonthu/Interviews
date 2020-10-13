@@ -1,6 +1,6 @@
 A set is like a hash map except it only stores keys, without values.
 
-A hash set gives constant-time lookup O(1)
+A hash set gives constant-time lookup O(1).
 
 
 
