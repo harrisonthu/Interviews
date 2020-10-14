@@ -27,7 +27,7 @@ class MyLinkedList {
             return -1;
         }
         else {
-            int counter = 0;
+            int counter = 0;    // counting the length of the linkedlist
             Node curr = head;
             while(counter != (index)) {
                 curr = curr.next;
