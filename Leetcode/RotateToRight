@@ -24,6 +24,24 @@ rotate 2 steps to the right: [3,99,-1,-100]
 
 class Solution {
     
+   ----------Solution 1 ---------------
+    
+  public void rotate(int[] nums, int k) {
+  
+    int[] a = new int[nums.length]; // create a new array to add rotated array
+    
+    for (int i = 0; i < nums.length; i++) {
+      a[(i + k) % nums.length] = nums[i];
+    }
+    // modify the input array just for returing the values.
+    for (int i = 0; i < nums.length; i++) {
+      nums[i] = a[i];
+    }
+  }    
+    
+    
+    
+   ----------Solution 2 ---------------
     // reverse the int array from left index to right index 
     public void reverse(int[] nums, int l_index, int r_index){
         while(l_index < r_index){
