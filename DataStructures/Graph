@@ -44,5 +44,5 @@ DFS ==> Preorder, In-order Post-Order
 
 
 BFS--> Use "Queue"
-BFS --> Use 2 or more child pointers(connecting more than 1 to k childs from each node)
+BFS --> Use 2 or more child pointers(connecting more than 1 to k childs from each node).
 
