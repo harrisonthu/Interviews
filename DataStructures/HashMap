@@ -55,8 +55,8 @@ public class HashMap
             Integer a = hmap.get("vishal");
             System.out.println("value for key \"vishal\" is: " + a);  // value for key "vishal" is 10
         }
-        hmap.clear();
-        System.out.println(hmap);
+        hmap.clear();     // Clearing the hash map using clear() 
+        System.out.println(hmap);     // Output: {}
 
     } 
       
