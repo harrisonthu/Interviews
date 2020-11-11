@@ -76,6 +76,10 @@ public class HashMap
 
 ---------------------- Example of Hashmap(key, value)
 
+Problem URL:
+https://leetcode.com/problems/isomorphic-strings/
+
+
 Example 1:
 Input: s = "egg", t = "add"
 Output: true
