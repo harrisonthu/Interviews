@@ -35,7 +35,7 @@ public class HashMap
         hmap.put("vishal",  10);
         hmap.put("sachin",  30);
         hmap.put("vaibhav", 20);
-        hmap.put("vishal",  10);     // hash map allows duplicate values but won't show both
+        hmap.put("vishal",  10);     // insert the duplicate key, it will replace the element of the corresponding key.
         System.out.println("Size of hmap is: " + hmap.size());  // Size of Map is 3
 
         //loop HashMap to print all values
