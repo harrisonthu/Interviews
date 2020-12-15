@@ -48,7 +48,7 @@ public class HashMap
         //      sachin  -3
         
         // Another way to print all values
-        System.out.println(hmap); // {vaibhav=20, vishal=10, sachin=30}
+        System.out.println(hmap); // {vaibhav=20, vishal=8, sachin=-3}
 
         if (hmap.containsKey("vishal"))
         {
