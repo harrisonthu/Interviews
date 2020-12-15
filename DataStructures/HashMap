@@ -35,7 +35,7 @@ public class HashMap
         hmap.put("vishal",  10);
         hmap.put("sachin",  -3);
         hmap.put("vaibhav", 20);
-        hmap.put("vishal",  10);     // insert the duplicate key, it will replace the element of the corresponding key.
+        hmap.put("vishal",  8);     // insert the duplicate key, it will replace the element of the corresponding key.
         System.out.println("Size of hmap is: " + hmap.size());  // Size of Map is 3
 
         //loop HashMap to print all values
@@ -44,7 +44,7 @@ public class HashMap
         }
         // Print out values after the loop
         //      vaibhav 20
-        //      vishal  10  
+        //      vishal  8  
         //      sachin  -3
         
         // Another way to print all values
