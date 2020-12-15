@@ -11,10 +11,13 @@ A hash set gives constant-time lookup O(1).
    h.add("South Africa"); 
    h.add("India"); // adding duplicate elements 
   
-   // Displaying the HashSet 
    System.out.println(h); 
-   System.out.println("List contains India or not:"+ h.contains("India")); 
-                           
+   // Printing and displaying the HashSet
+   [South Africa, Australia, India]
+
+   System.out.println("List contains India or not:"+ h.contains("India"));  // true
+   
+
 --------------------------------------------------------------------------------------------
 
 
