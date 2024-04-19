@@ -5,7 +5,7 @@ https://www.postgresqltutorial.com/
 ---- Post Gre Tables
 
 --  'serial'   ==>  'integer' in SQL Server
---  'numeric'  ==>  'float' in SQL Server
+--  'numeric'  ==>  'float' in SQL Server 
 Create table STATION (
     ID_1 serial PRIMARY KEY,
     CITY varchar(255), 
