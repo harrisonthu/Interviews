@@ -2,7 +2,7 @@ Question URL:
 https://leetcode.com/problems/product-sales-analysis-iii
 
 Solution:
-https://rextester.com/UIUDE72646
+https://rextester.com/UIUDE72646 
 
 
 Write an SQL query that selects the product id, year, quantity, and price for the first year of every product sold.
