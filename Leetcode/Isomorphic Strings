@@ -8,7 +8,7 @@ Output: true
 Example 2:
 Input: s = "foo", t = "bar"  
 Output: false
-
+ 
 // Hashmap
 // -- containsKey()  ==> return true/false if the key is mapped (true), false if the key is not mapped/present
 // -- get(key)  ==> retrieve value of the key
