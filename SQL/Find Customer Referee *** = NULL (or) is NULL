@@ -1,0 +1,60 @@
+Leetcode URL:
+https://leetcode.com/problems/find-customer-referee/description/?envType=study-plan-v2&envId=top-sql-50
+
+
+************************************************** Equal to NULL or IS NULL ************************************
+In a Boolean expression the “=” sign is used to check for equality of 2 values. 
+So, Mathematically the Boolean expression X = Y will check whether the value of X is EQUAL to the value of Y or not.
+
+Hence, the Boolean expression “A = NULL” (where A is some attribute) will check whether the value of A is EQUAL to NULL or not.
+But NULL actually means NO VALUE. And we can not compare some value with NO VALUE. Hence, the Boolean expression “A = NULL” will always result into NULL (whether A is NULL or not).
+
+IS NULL ==> Null phyit yin or NULL ne equal yin
+= NULL  ==> No Value phyit yin since =NULL mean the variable is no value phyit yin
+************************************************** Equal to NULL or IS NULL ************************************
+
+
+Customer
+
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| id          | int     |
+| name        | varchar |
+| referee_id  | int     |
++-------------+---------+
+In SQL, id is the primary key column for this table.
+Each row of this table indicates the id of a customer, their name, and the id of the customer who referred them.
+ 
+
+Find the names of the customer that are not referred by the customer with id = 2.
+
+Return the result table in any order.
+
+The result format is in the following example.
+
+ 
+
+Example 1:
+
+Input: 
+Customer table:
++----+------+------------+
+| id | name | referee_id |
++----+------+------------+
+| 1  | Will | null       |
+| 2  | Jane | null       |
+| 3  | Alex | 2          |
+| 4  | Bill | null       |
+| 5  | Zack | 1          |
+| 6  | Mark | 2          |
++----+------+------------+
+Output: 
++------+
+| name |
++------+
+| Will |
+| Jane |
+| Bill |
+| Zack |
++------+
