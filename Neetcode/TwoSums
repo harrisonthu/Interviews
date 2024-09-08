@@ -1,0 +1,17 @@
+Neetcode URL:
+https://neetcode.io/problems/two-integer-sum
+
+---------------------------------
+
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        myhashmap = {}  # create dictionary for using hashmap data structure 
+
+        for index,value in enumerate(nums):# enumerate = iterate index,values
+            diff = target - value
+            if(diff in myhashmap):
+                return [myhashmap[diff],index]
+            myhashmap[value] =index 
+        
+
