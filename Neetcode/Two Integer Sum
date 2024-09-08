@@ -6,6 +6,7 @@ https://neetcode.io/problems/two-integer-sum
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
+        ### adding all indexes as values instead of key in this hashmap(dict)
         myhashmap = {}  # create dictionary for using hashmap data structure 
 
         for index,value in enumerate(nums):# enumerate = iterate index,values
