@@ -1,0 +1,34 @@
+Leetcode URL:
+https://leetcode.com/problems/second-highest-salary/editorial/?envType=study-plan-v2&envId=top-sql-50
+
+
+
+-------------------------  
+--------  MSSQL   
+--------  OFFSET [x] rows ==> skip x rows 
+--------  
+--------  
+--------  
+
+
+
+
+
+
+
+
+
+-- sort out by salary and pick when id -1 (but when id is not in order) -- NOT WORKING
+-- when same salary with 2 differnt ids (we can use "DISTINCT")
+
+-- join the same table and pick second highest by MAX()
+
+SELECT (
+    SELECT DISTINCT salary 
+    FROM EMPLOYEE
+    ORDER BY salary desc
+    OFFSET 1 ROWS
+    FETCH NEXT 1 ROWS ONLY
+) AS SecondHighestSalary
+
+
