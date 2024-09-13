@@ -9,9 +9,41 @@ OFFSET / LIMIT
 --------  FETCH NEXT [x] rows ==> x rows     |  LIMIT [x] rows  ==> only [x] rows allow/display 
 
 
+DATEDIFF
+------------------------------------------------------------------
+DATEDIFF(table1.recordDate , table2.recordDate) = 1       ===> meaning date differes by exactly one day (comparing today vs previous day)
 
+
+
+LAG([column_name], 1)
+------------------------------------------------------------------
+LAG(temperature, 1) OVER (order by [recorddate]) = 1       ===> offset of 1 on temperature over (order by recorddate)
+
+
+
+DATEADD(DAY, -1, date) 
+------------------------------------------------------------------
+DATEADD(month, -1, '20240830')                             ===> decrement of 1 month by september 30, 2024 
+
+--------  MSSQL                                          |       MYSQL
+--------  DATEADD(DAY, -1, @currentdate)                 |   DATE_SUB(@currentdate, INTERVAL -1 DAY)
+-------- 
+
+
+
+
+CTE (Common Table Expression)
+------------------------------------------------------------------
+With [name] AS 
+(
+  SELECT.....
+  FROM....
+
+)
 
 
 
 
 ------------------------------------------------------------------
+
+
