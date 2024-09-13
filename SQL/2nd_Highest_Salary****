@@ -3,15 +3,27 @@ https://leetcode.com/problems/second-highest-salary/editorial/?envType=study-pla
 
 
 
--------------------------  
---------  MSSQL   
---------  OFFSET [x] rows ==> skip x rows 
---------  
---------  
+-------------------------------------------------------------  
+--------  MSSQL                              |    MYSQL
+--------  OFFSET [x] rows ==> skip x rows    |  OFFSET [x] rows  ==> skip [x] rows
+--------  FETCH NEXT [x] rows ==> x rows     |  LIMIT [x] rows  ==> only [x] rows allow/display 
+--------                                     |    
 --------  
 
 
+Example:
+Limit with offset to select 11 to 20 rows in SQL Server:
 
+SELECT email FROM emailTable 
+WHERE user_id=3
+ORDER BY Id
+OFFSET 10 ROWS
+FETCH NEXT 10 ROWS ONLY;
+
+
+ORDER BY: required
+OFFSET: optional number of skipped rows
+NEXT: required number of next rows
 
 
 
