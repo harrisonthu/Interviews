@@ -1,0 +1,19 @@
+Leetcode URL:
+https://leetcode.com/problems/rising-temperature/description/?envType=study-plan-v2&envId=top-sql-50
+
+/* Write your T-SQL query statement below */
+
+
+--- Today temperature is higher than tomorrow's temperature
+--- care about 2 things: filtering on (recordDate, temperature)
+-------    inner query take care of recordDate
+-------    outer query take care of temperature
+
+SELECT w1.id        
+FROM Weather w1                 ----- w1 ==> today date
+WHERE w1.temperature >  -- comparing temperature
+    (SELECT w2.temperature      ----- w2 = yesterday
+    FROM Weather w2
+    WHERE w2.recordDate = DATEADD(DAY, -1, w1.recordDate))  -- comparing recordDate
+
+
