@@ -32,6 +32,16 @@ DATEADD(month, -1, '20240830')                             ===> decrement of 1 m
 
 
 
+CASE WHEN
+------------------------------------------------------------------
+CASE 
+  WHEN 
+  THEN
+  ELSE
+END
+
+
+
 CTE (Common Table Expression)
 ------------------------------------------------------------------
 With [name] AS 
