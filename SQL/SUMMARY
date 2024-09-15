@@ -24,7 +24,7 @@ DATEDIFF(DAY, table1.recordDate , table2.recordDate) = 1       ===> meaning date
 
 
 
-LAG([column_name], 1)
+LAG([column_name], [offset/ignore], [default value to fill if NULL]) OVER (PARTITION BY partitiion_expression ORDER BY order_expression
 ------------------------------------------------------------------
 LAG(temperature, 1) OVER (order by [recorddate]) = 1       ===> compare current row values with values from the previous row (OR) offset of 1 on temperature over (order by recorddate) 
 
