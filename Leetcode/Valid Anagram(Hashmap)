@@ -1,0 +1,38 @@
+
+Leetcode URL:
+https://leetcode.com/problems/valid-anagram/
+
+
+class Solution(object):
+    def isAnagram(self, s, t):
+
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        
+        if len(s) != len(t):
+            return False
+        
+        #creating hashmaps(dict) for both strings (s, t)
+        hm_s, hm_t = {}, {}
+
+        for i in range(len(s)):
+            hm_s[s[i]] = 1 + hm_s.get(s[i],0)   # get function to set default to zero
+            hm_t[t[i]] = 1 + hm_t.get(t[i],0)
+        
+        if hm_s == hm_t:
+            return True
+        return False
+        
+
+
+
+
+
+
+
+
+
+        
