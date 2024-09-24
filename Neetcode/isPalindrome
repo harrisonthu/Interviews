@@ -1,0 +1,24 @@
+
+Neetcode ULR:
+https://neetcode.io/problems/is-palindrome
+
+
+
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        s = ''.join(char for char in s if char.isalnum())   # remove nonalphabetical characters
+        result = []
+        for i in s[::-1]:
+            result.append(i)
+        result_str = ''.join(result)
+        print('result:' ,result)
+        new_s = s.lower()
+        print('new_s: ' ,new_s)
+        new_result = result_str.lower()
+
+        print('new_result_str:' ,new_result.lower())
+        for i in range(len(s)):
+            if new_s[i] != new_result[i]:
+                return False
+        return True
+
